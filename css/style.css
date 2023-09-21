@@ -421,7 +421,12 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 
 .rotate-box-2.square-icon .rotate-box-info {
 	margin-top: 30px;
+	position: relative;
+	margin-bottom: 10px;
+	color: var(--dark-3);
+	text-align: left;
 }
+
 /* End rotate box-2 */
 /* ===== End rotate boxes ===== */
 
