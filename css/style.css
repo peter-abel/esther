@@ -295,6 +295,15 @@ section {
 /* End text carousel intro */
 /* ===== End intro ===== */
 
+/* CSS for the dividing line */
+.divider {
+    width: 2px; /* Adjust the width of the dividing line as needed */
+    background-color: #000; /* Set the color of the dividing line */
+    height: 100%; /* Make the dividing line stretch the full height of its container */
+    display: inline-block; /* Display the divider as an inline block */
+    margin: 0 20px; /* Adjust the margin as needed to control the spacing */
+}
+
 
 /* ===== Begin roatet boxes ===== */
 /* Begin rotate box-1 */
