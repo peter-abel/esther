@@ -1,14 +1,4 @@
-/*---------------------------------------------------------------------------------
 
-Master Stylesheet
-
-	Template:	 Unika - Responsive One Page HTML5 Template
-	Author:		 imransdesign.com
-	URL:		 http://imransdesign.com/
-    Designed By: https://www.behance.net/poljakova
-	Version:	1.0	
-
----------------------------------------------------------------------------------*/
 
 html {
 	height: 100% !important;
@@ -168,16 +158,16 @@ section {
 	transition: all 0.2s ease-in-out;
 }
 .navbar-default .navbar-brand {
-	background-image: url(../img/logo.png);
+	background-image: url(../img/sanifu-logo.png);
 }
 .navbar-shrink .navbar-brand {
-	background-image: url(../img/logo.png);
+	background-image: url(../img/sanifu-logo.png);
 }
 .navbar-transparent .navbar-brand {
-	background-image: url(../img/logo.png);
+	background-image: url(../img/sanifu-logo.png);
 }
 .navbar-inverse .navbar-brand {
-	background-image: url(../img/logo.png);
+	background-image: url(../img/sanifu-logo.png);
 }
 
 /* Navbar links */
