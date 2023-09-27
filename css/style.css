@@ -158,16 +158,16 @@ section {
 	transition: all 0.2s ease-in-out;
 }
 .navbar-default .navbar-brand {
-	background-image: url(../img/sanifu-logo.png);
+	background-image: url(../img/sanifu-logoA.png);
 }
 .navbar-shrink .navbar-brand {
-	background-image: url(../img/sanifu-logo.png);
+	background-image: url(../img/sanifu-logoA.png);
 }
 .navbar-transparent .navbar-brand {
-	background-image: url(../img/sanifu-logo.png);
+	background-image: url(../img/sanifu-logoA.png);
 }
 .navbar-inverse .navbar-brand {
-	background-image: url(../img/sanifu-logo.png);
+	background-image: url(../img/sanifu-logoA.png);
 }
 
 /* Navbar links */
