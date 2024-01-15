@@ -271,16 +271,18 @@ section {
 	top: 50%;
 	margin-top: -70px;
 }
-#text-carousel-intro-section .caption h1 {
+#text-carousel-intro-section .caption h3 {
 	margin-top: 0;
 	margin-bottom: 5px;
-	font-size: 60px;
+	font-size: 50px;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	font-family: sans-serif;
 }
 #text-carousel-intro-section .caption p {
 	letter-spacing: 2px;
 	font-size: 16px;
+	font-family: sans-serif;
 }
 /* End text carousel intro */
 /* ===== End intro ===== */
@@ -410,11 +412,15 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 } 
 
 .rotate-box-2.square-icon .rotate-box-info {
-	margin-top: 30px;
+	margin-top: 0px;
 	position: relative;
 	margin-bottom: 10px;
 	color: var(--dark-3);
 	/*text-align: left;*/
+}
+.rotate-box-2-container {
+    display: flex; /* Use flexbox for container */
+    align-items: center; /* Align items vertically in the center */
 }
 
 /* End rotate box-2 */
