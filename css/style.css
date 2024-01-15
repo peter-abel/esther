@@ -416,12 +416,10 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 	position: relative;
 	margin-bottom: 10px;
 	color: var(--dark-3);
-	/*text-align: left;*/
+	
 }
-.rotate-box-2-container {
-    display: flex; /* Use flexbox for container */
-    align-items: center; /* Align items vertically in the center */
-}
+
+
 
 /* End rotate box-2 */
 /* ===== End rotate boxes ===== */
