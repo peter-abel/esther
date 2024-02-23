@@ -134,8 +134,8 @@ section {
 	transition: all 0.2s ease-in-out;
 }
 .navbar .container {
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 
@@ -143,9 +143,9 @@ section {
 .navbar-brand {
 	background-repeat: no-repeat;
 	background-position: left center;
-	width: 350px;
+	width: 250px;
 	height: auto;
-	padding: 17px 0;
+	padding: 5px 0;
 	text-indent: -99999px;
 	font-size: 24px;
 	font-weight: 600;
@@ -159,15 +159,19 @@ section {
 }
 .navbar-default .navbar-brand {
 	background-image: url(../img/sanifu-logoc.png);
+	max-width: 80%;
 }
 .navbar-shrink .navbar-brand {
 	background-image: url(../img/sanifu-logoc.png);
+	max-width: 80%;
 }
 .navbar-transparent .navbar-brand {
 	background-image: url(../img/sanifu-logoc.png);
+	max-width: 80%;
 }
 .navbar-inverse .navbar-brand {
 	background-image: url(../img/sanifu-logoc.png);
+	max-width: 80%;
 }
 
 /* Navbar links */

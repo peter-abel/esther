@@ -146,7 +146,7 @@
 
 	/* Navbar brand */
 	.navbar-brand, .navbar-brand:focus {
-		margin-left: 10px;
+		margin-left: 0px;
 		max-width: 80%; /* Ensure the logo takes up a reasonable width */
 	}
 
