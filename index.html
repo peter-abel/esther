@@ -23,6 +23,7 @@
 		<link rel="stylesheet" href="inc/font-awesome/css/font-awesome.min.css"> <!-- Font Icons -->
 		<link rel="stylesheet" href="inc/owl-carousel/css/owl.carousel.css">
 		<link rel="stylesheet" href="inc/owl-carousel/css/owl.theme.css">
+        
 
 		<!-- Theme CSS -->
         <link rel="stylesheet" href="css/reset.css">
@@ -46,6 +47,90 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
         <link rel="shortcut icon" type="x-icon"  href="icons8.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <style>
+            /* Portfolio Section Specific Styling */
+            #portfolio-section {
+                background-color: #f8f9fa;
+                padding: 60px 0;
+            }
+
+            .portfolio_content_area {
+                margin-top: 30px;
+            }
+
+            .portfolio_single_content {
+                margin-bottom: 30px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .portfolio_single_content:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            }
+
+            .img-wrapper {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .portfolio_hover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.6);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .portfolio_single_content:hover .portfolio_hover {
+                opacity: 1;
+            }
+
+            .portfolio_hover_inner {
+                text-align: center;
+            }
+
+            .portfolio-link {
+                color: white;
+                padding: 10px 20px;
+                border: 2px solid white;
+                text-decoration: none;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            .portfolio-link:hover {
+                background-color: white;
+                color: #333;
+            }
+
+            .portfolio-details {
+                padding: 15px;
+                background-color: white;
+            }
+
+            .portfolio-title h4 {
+                color: white;
+                margin-bottom: 10px;
+                font-weight: 600;
+            }
+
+            .portfolio-description ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .portfolio-description li {
+                margin-bottom: 5px;
+                color: #7f8c8d;
+            }
+        </style>
 	</head>
 
     <body data-spy="scroll" data-target="#main-navbar">
@@ -307,121 +392,66 @@
             <!-- End Services -->
   
                 
-            <!-- Begin Portfolio -->
             <section id="portfolio-section" class="page bg-style1">
-            	<div class="container">
+                <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="portfolio">
-                                <!-- Begin page header-->
+                                <!-- Page Header -->
                                 <div class="page-header-wrapper">
                                     <div class="container">
                                         <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
                                             <h2>Our Projects</h2>
                                             <div class="devider"></div>
-                                            <p class="subtitle"></p>
+                                            <p class="subtitle">Sustainable Solutions in Action</p>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End page header-->
-                                <div class="portfoloi_content_area" >
-                                  <!--  <div class="portfolio_menu" id="filters">
-                                        <ul>
-                                            <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">all</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".websites">websites</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".webDesign" >web design</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".appsDevelopment">apps development</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".GraphicDesign">graphic design</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".responsive">responsive</a></li>
-                                        </ul>
-                                    </div>  -
+            
+                                <!-- Portfolio Content -->
+                                <div class="portfoloi_content_area">
+                                    <!--
+                                    <div class="portfolio_menu">
+                                        <div class="filters">
+                                            <ul>
+                                                <li class="active" data-filter="*">All Projects</li>
+                                                <li data-filter=".edge">EDGE Certification</li>
+                                                <li data-filter=".green-design">Green Design</li>
+                                            </ul>
+                                        </div>
+                                    </div> -->
+                
                                     <div class="portfolio_content">
-                                        <div class="row"  id="portfolio">
-                                            <div class="col-xs-12 col-sm-4 appsDevelopment">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-6 mix edge green-design">
                                                 <div class="portfolio_single_content">
-                                                    <img src="img/portfolio/p1.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Skull Awesome</a>
-                                                        <span>Subtitle</span>
+                                                    <div class="img-wrapper">
+                                                        <img src="img\portfolio\p1.jpg" alt="Arth Biobag Rwanda Project" class="img-responsive">
+                                                        <div class="portfolio_hover">
+                                                            <div class="portfolio_hover_inner">
+                                                                <a class="portfolio-link" href="#">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portfolio-details">
+                                                        <div class="portfolio-title">
+                                                            <h4>EDGE Certification: Arth Biobag Rwanda</h4>
+                                                        </div>
+                                                        <div class="portfolio-description">
+                                                            <ul>
+                                                                <li><strong>🌍 Client:</strong> Arth Biobag Rwanda</li>
+                                                                <li><strong>🏭 Sector:</strong> Sustainable Packaging / Light Industrial</li>
+                                                                <li><strong>📍 Location:</strong> Rwanda</li>
+                                                                <li><strong>📋 Service:</strong> EDGE Certification Audit</li>
+                                                                <li><strong>✅ Status:</strong> Preliminary EDGE Certification Awarded</li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-12 col-sm-4 GraphicDesign">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/portfolio/p2.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Photo Frame</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 responsive">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/portfolio/p3.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Hand Shots</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 webDesign websites">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/portfolio/p4.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Night Abstract</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 appsDevelopment websites">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img//portfolio/p5.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Joy of Independence</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 GraphicDesign">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/portfolio/p6.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Night Crawlers</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 responsive">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/portfolio/p7.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Last Motel</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 GraphicDesign">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/portfolio/p8.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Dirk Road</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 websites">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/portfolio/p9.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Old is Gold</a>
-                                                        <span>Subtitle</span>
-                                                    </div>  
-                                                </div> 
-                                            </div> 
                                         </div>
                                     </div>
-                                </div> -->
-                            
+                                </div>
                             </div>  
                         </div>
                     </div>
@@ -639,9 +669,57 @@
                 
                 <div class="container">
                 	<ul class="social-list">
-                		
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.5s"><span class="rotate-box-icon"><i class="	fa fa-linkedin-square"></i></span></a></li>                
-                    </ul>
+                    <li>
+                        <a href="https://www.linkedin.com/company/sanifu-limited/"
+                        class="rotate-box-1 square-icon text-center wow zoomIn"
+                        data-wow-delay="0.5s">
+                            <span class="rotate-box-icon">
+                                <i class="fa fa-linkedin-square"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.facebook.com/sanifulimited"
+                        class="rotate-box-1 square-icon text-center wow zoomIn"
+                        data-wow-delay="0.6s">
+                            <span class="rotate-box-icon">
+                                <i class="fa fa-facebook-square"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://x.com/sanifulimited"
+                        class="rotate-box-1 square-icon text-center wow zoomIn"
+                        data-wow-delay="0.7s">
+                            <span class="rotate-box-icon">
+                                <i class="fa fa-twitter-square"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/sanifulimited/?hl=en"
+                        class="rotate-box-1 square-icon text-center wow zoomIn"
+                        data-wow-delay="0.9s">
+                            <span class="rotate-box-icon">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="https://www.pinterest.com/sanifulimited/"
+                        class="rotate-box-1 square-icon text-center wow zoomIn"
+                        data-wow-delay="0.8s">
+                            <span class="rotate-box-icon">
+                                <i class="fa fa-pinterest-square"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+
                 </div>
                 
             </section>
@@ -743,6 +821,69 @@
 		<script src="inc/jquery.easing.min.js"></script>
 		<script src="inc/jquery.counterup.min.js"></script>
 		<script src="inc/smoothscroll.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            // Portfolio Filtering (Commented out in HTML, but added for future use)
+            const portfolioItems = document.querySelectorAll('.portfolio_single_content');
+            const filterButtons = document.querySelectorAll('.filters ul li');
+
+            if (filterButtons.length > 0) {
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Remove active class from all buttons
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+
+                        // Get the filter value
+                        const filter = this.getAttribute('data-filter');
+
+                        portfolioItems.forEach(item => {
+                            // Show/hide items based on filter
+                            if (filter === '*' || item.classList.contains(filter.replace('.', ''))) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Project Details Modal (Placeholder functionality)
+            const projectLinks = document.querySelectorAll('.portfolio-link');
+            
+            projectLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Find the parent portfolio item
+                    const portfolioItem = this.closest('.portfolio_single_content');
+                    
+                    // Extract project details
+                    const title = portfolioItem.querySelector('.portfolio-title h4').textContent;
+                    const description = portfolioItem.querySelector('.portfolio-description').innerHTML;
+                    
+                    // Create and show modal
+                    const modal = document.createElement('div');
+                    modal.classList.add('project-modal');
+                    modal.innerHTML = `
+                        <div class="modal-content">
+                            <span class="close-modal">&times;</span>
+                            <h2>${title}</h2>
+                            <div class="modal-description">${description}</div>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(modal);
+                    
+                    // Close modal functionality
+                    modal.querySelector('.close-modal').addEventListener('click', function() {
+                        document.body.removeChild(modal);
+                    });
+                });
+            });
+        });
+        </script>
 
 		<!-- Theme JS -->
 		<script src="js/theme.js"></script>

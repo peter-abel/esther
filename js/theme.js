@@ -90,6 +90,11 @@ $("#owl-intro-text").owlCarousel({
     pagination : true
 })
 
+// Portfolio filtering
+$('.portfolio_content').isotope({
+    itemSelector: '.mix',
+    layoutMode: 'fitRows'
+});
 
 // Partner carousel
 $("#owl-partners").owlCarousel({
