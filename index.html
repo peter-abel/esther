@@ -50,6 +50,48 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <style>
+            /* Logo Animation Section */
+            #logo-animation-section {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: #363940;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                opacity: 1;
+                transition: opacity 1s ease-in-out;
+            }
+
+            #logo-animation-section.fade-out {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .logo-container {
+                text-align: center;
+            }
+
+            .animated-logo {
+                max-width: 80%;
+                max-height: 80vh;
+                animation: logoFadeIn 2s ease-in-out;
+            }
+
+            @keyframes logoFadeIn {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.8);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
             /* Portfolio Section Specific Styling */
             #portfolio-section {
                 background-color: #f8f9fa;
@@ -138,11 +180,18 @@
         <div class="page-loader"></div>  <!-- Display loading image while page loads -->
     	<div class="body">
         
+        <!-- Logo Animation Section -->
+        <section id="logo-animation-section" class="fullscreen-logo">
+            <div class="logo-container">
+                <img src="img/sanifu.PNG" alt="Sanifu Limited" class="animated-logo">
+            </div>
+        </section>
+
             <!--========== BEGIN HEADER ==========-->
             <header id="header" class="header-main">
 
                 <!-- Begin Navbar -->
-                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"  style="background-color:rgb(63, 66, 66); height: 50px;"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
+                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
 
                   <div class="container">
 
@@ -160,11 +209,9 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll" href="body">Home</a></li>
+                            <li><a class="page-scroll" href="#portfolio-section">Projects</a></li>
                             <li><a class="page-scroll" href="#about-section">About</a></li>
                             <li><a class="page-scroll" href="#services-section">Services</a></li>
-                            <li><a class="page-scroll" href="#portfolio-section">Projects</a></li>
-                            <li><a class="page-scroll" href="#team-section">Team</a></li>                            
                             <li><a class="page-scroll" href="#contact-section">Contact</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -210,8 +257,298 @@
 			</section>
 			<!-- End text carousel intro section -->
                 
+            <!-- Begin portfolio section (MOVED TO BE FIRST CONTENT SECTION) -->
+            <section id="portfolio-section" class="page bg-style1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portfolio">
+                                <!-- Page Header -->
+                                <div class="page-header-wrapper">
+                                    <div class="container">
+                                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                                            <h2>Our Projects</h2>
+                                            <div class="devider"></div>
+                                            <p class="subtitle">Sustainable Solutions in Action</p>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <!-- Portfolio Content -->
+                                <div class="portfoloi_content_area">
+                                    <!--
+                                    <div class="portfolio_menu">
+                                        <div class="filters">
+                                            <ul>
+                                                <li class="active" data-filter="*">All Projects</li>
+                                                <li data-filter=".edge">EDGE Certification</li>
+                                                <li data-filter=".green-design">Green Design</li>
+                                            </ul>
+                                        </div>
+                                    </div> -->
                 
-                
+                                    <div class="portfolio_content">
+                                        <div class="row">
+                                            <!-- Project 1 -->
+                                            <div class="col-md-4 col-sm-6 mix edge">
+                                                <div class="portfolio_single_content">
+                                                    <div class="img-wrapper">
+                                                        <img src="img\portfolio\p9.jpg" alt="Arth Biobag Rwanda Project" class="img-responsive">
+                                                        <div class="portfolio_hover">
+                                                            <div class="portfolio_hover_inner">
+                                                                <a class="portfolio-link" href="#">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portfolio-details">
+                                                        <div class="portfolio-title">
+                                                            <h4>EDGE Certification: Arth Biobag Rwanda</h4>
+                                                        </div>
+                                                        <div class="portfolio-description">
+                                                            <ul>
+                                                                <li><strong>🌍 Client:</strong> Arth Biobag Rwanda</li>
+                                                                <li><strong>🏭 Sector:</strong> Sustainable Packaging / Light Industrial</li>
+                                                                <li><strong>📍 Location:</strong> Rwanda</li>
+                                                                <li><strong>📋 Service:</strong> EDGE Certification Audit</li>
+                                                                <li><strong>✅ Status:</strong> Preliminary EDGE Certification Awarded</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Project 2 -->
+                                            <div class="col-md-4 col-sm-6 mix green-design">
+                                                <div class="portfolio_single_content">
+                                                    <div class="img-wrapper">
+                                                        <img src="img\portfolio\p9.jpg" alt="Green Residential Complex" class="img-responsive">
+                                                        <div class="portfolio_hover">
+                                                            <div class="portfolio_hover_inner">
+                                                                <a class="portfolio-link" href="#">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portfolio-details">
+                                                        <div class="portfolio-title">
+                                                            <h4>Green Residential Complex</h4>
+                                                        </div>
+                                                        <div class="portfolio-description">
+                                                            <ul>
+                                                                <li><strong>🌍 Client:</strong> Private Developer</li>
+                                                                <li><strong>🏭 Sector:</strong> Residential</li>
+                                                                <li><strong>📍 Location:</strong> Kigali, Rwanda</li>
+                                                                <li><strong>📋 Service:</strong> Sustainable Design Consultancy</li>
+                                                                <li><strong>✅ Status:</strong> Design Phase</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Project 3 -->
+                                            <div class="col-md-4 col-sm-6 mix edge">
+                                                <div class="portfolio_single_content">
+                                                    <div class="img-wrapper">
+                                                        <img src="img\portfolio\p9.jpg" alt="Commercial Office Building" class="img-responsive">
+                                                        <div class="portfolio_hover">
+                                                            <div class="portfolio_hover_inner">
+                                                                <a class="portfolio-link" href="#">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portfolio-details">
+                                                        <div class="portfolio-title">
+                                                            <h4>Commercial Office Building</h4>
+                                                        </div>
+                                                        <div class="portfolio-description">
+                                                            <ul>
+                                                                <li><strong>🌍 Client:</strong> Corporate Client</li>
+                                                                <li><strong>🏭 Sector:</strong> Commercial</li>
+                                                                <li><strong>📍 Location:</strong> Rwanda</li>
+                                                                <li><strong>📋 Service:</strong> EDGE Certification & Green Design</li>
+                                                                <li><strong>✅ Status:</strong> Construction Phase</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Project 4 -->
+                                            <div class="col-md-4 col-sm-6 mix green-design">
+                                                <div class="portfolio_single_content">
+                                                    <div class="img-wrapper">
+                                                        <img src="img\portfolio\p9.jpg" alt="Educational Facility" class="img-responsive">
+                                                        <div class="portfolio_hover">
+                                                            <div class="portfolio_hover_inner">
+                                                                <a class="portfolio-link" href="#">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portfolio-details">
+                                                        <div class="portfolio-title">
+                                                            <h4>Sustainable Educational Facility</h4>
+                                                        </div>
+                                                        <div class="portfolio-description">
+                                                            <ul>
+                                                                <li><strong>🌍 Client:</strong> Educational Institution</li>
+                                                                <li><strong>🏭 Sector:</strong> Education</li>
+                                                                <li><strong>📍 Location:</strong> Rwanda</li>
+                                                                <li><strong>📋 Service:</strong> Whole Building Sustainable Design</li>
+                                                                <li><strong>✅ Status:</strong> Completed</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Project 5 -->
+                                            <div class="col-md-4 col-sm-6 mix edge">
+                                                <div class="portfolio_single_content">
+                                                    <div class="img-wrapper">
+                                                        <img src="img\portfolio\p9.jpg" alt="Healthcare Facility" class="img-responsive">
+                                                        <div class="portfolio_hover">
+                                                            <div class="portfolio_hover_inner">
+                                                                <a class="portfolio-link" href="#">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portfolio-details">
+                                                        <div class="portfolio-title">
+                                                            <h4>Green Healthcare Facility</h4>
+                                                        </div>
+                                                        <div class="portfolio-description">
+                                                            <ul>
+                                                                <li><strong>🌍 Client:</strong> Healthcare Provider</li>
+                                                                <li><strong>🏭 Sector:</strong> Healthcare</li>
+                                                                <li><strong>📍 Location:</strong> Rwanda</li>
+                                                                <li><strong>📋 Service:</strong> EDGE Certification & Compliance</li>
+                                                                <li><strong>✅ Status:</strong> Operational</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Project 6 -->
+                                            <div class="col-md-4 col-sm-6 mix green-design">
+                                                <div class="portfolio_single_content">
+                                                    <div class="img-wrapper">
+                                                        <img src="img\portfolio\p9.jpg" alt="Mixed-Use Development" class="img-responsive">
+                                                        <div class="portfolio_hover">
+                                                            <div class="portfolio_hover_inner">
+                                                                <a class="portfolio-link" href="#">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portfolio-details">
+                                                        <div class="portfolio-title">
+                                                            <h4>Mixed-Use Sustainable Development</h4>
+                                                        </div>
+                                                        <div class="portfolio-description">
+                                                            <ul>
+                                                                <li><strong>🌍 Client:</strong> Development Group</li>
+                                                                <li><strong>🏭 Sector:</strong> Mixed-Use</li>
+                                                                <li><strong>📍 Location:</strong> Kigali, Rwanda</li>
+                                                                <li><strong>📋 Service:</strong> Comprehensive Green Building Consultancy</li>
+                                                                <li><strong>✅ Status:</strong> Planning Phase</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Project 7 -->
+                                            <div class="col-md-4 col-sm-6 mix edge">
+                                                <div class="portfolio_single_content">
+                                                    <div class="img-wrapper">
+                                                        <img src="img\portfolio\p9.jpg" alt="Industrial Facility" class="img-responsive">
+                                                        <div class="portfolio_hover">
+                                                            <div class="portfolio_hover_inner">
+                                                                <a class="portfolio-link" href="#">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portfolio-details">
+                                                        <div class="portfolio-title">
+                                                            <h4>Sustainable Industrial Facility</h4>
+                                                        </div>
+                                                        <div class="portfolio-description">
+                                                            <ul>
+                                                                <li><strong>🌍 Client:</strong> Manufacturing Company</li>
+                                                                <li><strong>🏭 Sector:</strong> Industrial</li>
+                                                                <li><strong>📍 Location:</strong> Rwanda</li>
+                                                                <li><strong>📋 Service:</strong> EDGE Certification & Energy Efficiency</li>
+                                                                <li><strong>✅ Status:</strong> Design Phase</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Project 8 -->
+                                            <div class="col-md-4 col-sm-6 mix green-design">
+                                                <div class="portfolio_single_content">
+                                                    <div class="img-wrapper">
+                                                        <img src="img\portfolio\p9.jpg" alt="Hospitality Project" class="img-responsive">
+                                                        <div class="portfolio_hover">
+                                                            <div class="portfolio_hover_inner">
+                                                                <a class="portfolio-link" href="#">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portfolio-details">
+                                                        <div class="portfolio-title">
+                                                            <h4>Eco-Friendly Hospitality Project</h4>
+                                                        </div>
+                                                        <div class="portfolio-description">
+                                                            <ul>
+                                                                <li><strong>🌍 Client:</strong> Hotel Group</li>
+                                                                <li><strong>🏭 Sector:</strong> Hospitality</li>
+                                                                <li><strong>📍 Location:</strong> Rwanda</li>
+                                                                <li><strong>📋 Service:</strong> Green Building & Sustainable Design</li>
+                                                                <li><strong>✅ Status:</strong> Construction Phase</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Project 9 -->
+                                            <div class="col-md-4 col-sm-6 mix edge green-design">
+                                                <div class="portfolio_single_content">
+                                                    <div class="img-wrapper">
+                                                        <img src="img\portfolio\p9.jpg" alt="Public Building" class="img-responsive">
+                                                        <div class="portfolio_hover">
+                                                            <div class="portfolio_hover_inner">
+                                                                <a class="portfolio-link" href="#">View Details</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portfolio-details">
+                                                        <div class="portfolio-title">
+                                                            <h4>Sustainable Public Building</h4>
+                                                        </div>
+                                                        <div class="portfolio-description">
+                                                            <ul>
+                                                                <li><strong>🌍 Client:</strong> Government Agency</li>
+                                                                <li><strong>🏭 Sector:</strong> Public Infrastructure</li>
+                                                                <li><strong>📍 Location:</strong> Rwanda</li>
+                                                                <li><strong>📋 Service:</strong> Complete Sustainable Design & EDGE</li>
+                                                                <li><strong>✅ Status:</strong> Completed</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End portfolio -->
                 
             <!-- Begin about section -->
 			<section id="about-section" class="page bg-style1">
@@ -388,77 +725,9 @@
                     </div> <!-- /.container -->
                                            
                 </div>
-                <!-- End rotate-box-2 -->
+            <!-- End rotate-box-2 -->
             </section>
             <!-- End Services -->
-  
-                
-            <section id="portfolio-section" class="page bg-style1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="portfolio">
-                                <!-- Page Header -->
-                                <div class="page-header-wrapper">
-                                    <div class="container">
-                                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                                            <h2>Our Projects</h2>
-                                            <div class="devider"></div>
-                                            <p class="subtitle">Sustainable Solutions in Action</p>
-                                        </div>
-                                    </div>
-                                </div>
-            
-                                <!-- Portfolio Content -->
-                                <div class="portfoloi_content_area">
-                                    <!--
-                                    <div class="portfolio_menu">
-                                        <div class="filters">
-                                            <ul>
-                                                <li class="active" data-filter="*">All Projects</li>
-                                                <li data-filter=".edge">EDGE Certification</li>
-                                                <li data-filter=".green-design">Green Design</li>
-                                            </ul>
-                                        </div>
-                                    </div> -->
-                
-                                    <div class="portfolio_content">
-                                        <div class="row">
-                                            <div class="col-md-4 col-sm-6 mix edge green-design">
-                                                <div class="portfolio_single_content">
-                                                    <div class="img-wrapper">
-                                                        <img src="img\portfolio\p1.jpg" alt="Arth Biobag Rwanda Project" class="img-responsive">
-                                                        <div class="portfolio_hover">
-                                                            <div class="portfolio_hover_inner">
-                                                                <a class="portfolio-link" href="#">View Details</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="portfolio-details">
-                                                        <div class="portfolio-title">
-                                                            <h4>EDGE Certification: Arth Biobag Rwanda</h4>
-                                                        </div>
-                                                        <div class="portfolio-description">
-                                                            <ul>
-                                                                <li><strong>🌍 Client:</strong> Arth Biobag Rwanda</li>
-                                                                <li><strong>🏭 Sector:</strong> Sustainable Packaging / Light Industrial</li>
-                                                                <li><strong>📍 Location:</strong> Rwanda</li>
-                                                                <li><strong>📋 Service:</strong> EDGE Certification Audit</li>
-                                                                <li><strong>✅ Status:</strong> Preliminary EDGE Certification Awarded</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End portfolio -->
             
                 
                 
@@ -824,6 +1093,26 @@
 		<script src="inc/smoothscroll.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
+            // Logo Animation - Fade out after 3 seconds and scroll to projects
+            const logoSection = document.getElementById('logo-animation-section');
+            
+            if (logoSection) {
+                setTimeout(function() {
+                    logoSection.classList.add('fade-out');
+                    
+                    // After fade out, scroll to projects section
+                    setTimeout(function() {
+                        const portfolioSection = document.getElementById('portfolio-section');
+                        if (portfolioSection) {
+                            window.scrollTo({
+                                top: portfolioSection.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 1000);
+                }, 3000);
+            }
+
             // Portfolio Filtering (Commented out in HTML, but added for future use)
             const portfolioItems = document.querySelectorAll('.portfolio_single_content');
             const filterButtons = document.querySelectorAll('.filters ul li');
