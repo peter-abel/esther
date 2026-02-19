@@ -173,6 +173,458 @@
                 margin-bottom: 5px;
                 color: #7f8c8d;
             }
+
+            /* Quick Facts Bar */
+            .quick-facts {
+                display: flex;
+                justify-content: space-between;
+                margin: 15px 0;
+                padding: 10px 0;
+                border-top: 1px solid #eee;
+                border-bottom: 1px solid #eee;
+            }
+
+            .fact-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                flex: 1;
+            }
+
+            .fact-item i {
+                color: #2c3e50;
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            .fact-item span {
+                font-size: 12px;
+                color: #7f8c8d;
+                font-weight: 500;
+            }
+
+            /* Project Tags */
+            .project-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                margin-top: 15px;
+            }
+
+            .tag {
+                background-color: #f1f8ff;
+                color: #0366d6;
+                padding: 4px 10px;
+                border-radius: 12px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+
+            .tag:nth-child(2) {
+                background-color: #f0fff4;
+                color: #22863a;
+            }
+
+            .tag:nth-child(3) {
+                background-color: #fff5f5;
+                color: #cb2431;
+            }
+
+            /* Portfolio Filter Menu */
+            .portfolio_menu {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .filters ul {
+                list-style: none;
+                padding: 0;
+                display: inline-flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .filters ul li {
+                cursor: pointer;
+                padding: 8px 20px;
+                background-color: #f8f9fa;
+                border: 1px solid #dee2e6;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+                font-weight: 500;
+            }
+
+            .filters ul li.active,
+            .filters ul li:hover {
+                background-color: #2c3e50;
+                color: white;
+                border-color: #2c3e50;
+            }
+
+            /* Portfolio Title Color Fix */
+            .portfolio-title h4 {
+                color: #2c3e50;
+                margin-bottom: 10px;
+                font-weight: 600;
+            }
+
+            /* Portfolio Description Paragraph */
+            .portfolio-description p {
+                color: #555;
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
+
+            /* Pillar Introduction Sections */
+            .pillar-intro-sections {
+                margin-bottom: 40px;
+                position: relative;
+            }
+
+            .pillar-intro {
+                display: none;
+                background: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                margin-bottom: 20px;
+                border-left: 4px solid #2c3e50;
+                animation: fadeIn 0.5s ease;
+            }
+
+            .pillar-intro.active {
+                display: block;
+            }
+
+            .pillar-intro h3 {
+                color: #2c3e50;
+                margin-bottom: 10px;
+                font-size: 28px;
+            }
+
+            .pillar-subtitle {
+                font-size: 18px;
+                font-weight: 600;
+                color: #4a5568;
+                margin-bottom: 15px;
+                font-style: italic;
+            }
+
+            .pillar-intro p {
+                color: #555;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .subcategory-filters {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 20px;
+            }
+
+            .subcategory-btn {
+                padding: 8px 16px;
+                background-color: #f8f9fa;
+                border: 1px solid #dee2e6;
+                border-radius: 4px;
+                color: #363940;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .subcategory-btn:hover {
+                background-color: #e9ecef;
+                border-color: #ced4da;
+            }
+
+            .subcategory-btn.active {
+                background-color: #2c3e50;
+                color: white;
+                border-color: #2c3e50;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            /* Pillar-specific colors */
+            .pillar-intro#architectural-designs-intro {
+                border-left-color: #3498db;
+            }
+
+            .pillar-intro#edge-auditors-intro {
+                border-left-color: #27ae60;
+            }
+
+            .filters ul li[data-filter=".architectural-design"]:hover,
+            .filters ul li[data-filter=".architectural-design"].active {
+                background-color: #3498db;
+                border-color: #3498db;
+            }
+
+            .filters ul li[data-filter=".edge-auditors"]:hover,
+            .filters ul li[data-filter=".edge-auditors"].active {
+                background-color: #27ae60;
+                border-color: #27ae60;
+            }
+
+            /* Ensure project images are easily saveable */
+            .project-image-saveable {
+                position: relative;
+                z-index: 2;
+                pointer-events: auto;
+            }
+
+            /* Ensure hover overlay doesn't block right-click */
+            .portfolio_hover {
+                pointer-events: none;
+            }
+
+            .portfolio_hover_inner {
+                pointer-events: auto;
+            }
+
+            /* Make sure images are fully accessible */
+            .img-wrapper {
+                position: relative;
+            }
+
+            .img-wrapper img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            /* New Project Card Styles */
+            .project-card {
+                background: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                margin-bottom: 30px;
+                height: 100%;
+            }
+
+            .project-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            }
+
+            .project-image {
+                position: relative;
+                overflow: hidden;
+                height: 250px;
+            }
+
+            .project-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.6s ease;
+            }
+
+            .project-card:hover .project-image img {
+                transform: scale(1.1);
+            }
+
+            .project-badge {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: #2c3e50;
+                color: white;
+                padding: 5px 12px;
+                border-radius: 4px;
+                font-size: 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                z-index: 2;
+            }
+
+            .project-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.6);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                z-index: 1;
+            }
+
+            .project-card:hover .project-overlay {
+                opacity: 1;
+            }
+
+            .project-overlay .btn-primary {
+                background: white;
+                color: #2c3e50;
+                border: none;
+                padding: 10px 20px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;
+            }
+
+            .project-overlay .btn-primary:hover {
+                background: #2c3e50;
+                color: white;
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+
+            .project-meta {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #eee;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .project-meta span {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 12px;
+                color: #7f8c8d;
+            }
+
+            .project-meta i {
+                color: #2c3e50;
+                font-size: 14px;
+            }
+
+            .project-title {
+                font-size: 18px;
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 10px;
+                line-height: 1.4;
+            }
+
+            .project-description {
+                color: #555;
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+
+            .project-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+
+            .project-tags .tag {
+                background-color: #f1f8ff;
+                color: #0366d6;
+                padding: 4px 10px;
+                border-radius: 12px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+
+            .project-tags .tag.certified {
+                background-color: #f0fff4;
+                color: #22863a;
+            }
+
+            .project-tags .tag:nth-child(2):not(.certified) {
+                background-color: #f0fff4;
+                color: #22863a;
+            }
+
+            .project-tags .tag:nth-child(3):not(.certified) {
+                background-color: #fff5f5;
+                color: #cb2431;
+            }
+
+            /* Responsive adjustments for project cards */
+            @media (max-width: 768px) {
+                .project-meta {
+                    flex-direction: column;
+                    gap: 8px;
+                }
+                
+                .project-meta span {
+                    justify-content: flex-start;
+                }
+                
+                .project-image {
+                    height: 200px;
+                }
+            }
+
+            /* Animation for animate-on-scroll */
+            .animate-on-scroll {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+
+            .animate-on-scroll.animated {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            /* Fix portfolio section visibility */
+            .portfolio {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            /* Fix portfolio content display */
+            .portfoloi_content_area {
+                display: block;
+                visibility: visible;
+            }
+
+            /* Fix portfolio items display */
+            .portfolio_content {
+                display: block;
+                visibility: visible;
+                min-height: 400px; /* Ensure content has height */
+            }
+
+            /* Ensure project cards are visible */
+            .project-card {
+                display: block;
+                visibility: visible;
+                opacity: 1;
+                background: white;
+                margin-bottom: 30px;
+            }
+
+            /* Fix for Isotope grid items */
+            .portfolio_content .mix {
+                display: block !important;
+                opacity: 1 !important;
+            }
+
+            /* Debug - add a temporary background to see the section */
+            #portfolio-section {
+                background-color: #f8f9fa;
+                padding: 60px 0;
+                min-height: 600px; /* Ensure section has height */
+                display: block !important;
+                visibility: visible !important;
+            }
         </style>
 	</head>
 
@@ -183,7 +635,7 @@
         <!-- Logo Animation Section -->
         <section id="logo-animation-section" class="fullscreen-logo">
             <div class="logo-container">
-                <img src="img/sanifu.PNG" alt="Sanifu Limited" class="animated-logo">
+                <img src="img\sanifu-architectural-firmlogo.png" alt="Sanifu Limited" class="animated-logo">
             </div>
         </section>
 
@@ -196,15 +648,18 @@
                   <div class="container">
 
                     <!-- Brand and toggle get grouped for better mobile display -->
+                   <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                      </button>
-                      <a class="navbar-brand page-scroll" href="index.html">Sanifu</a>
-                    </div>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="index.html">
+                        <img src="img/sani.png" alt="Sanifu Limited" class="nav-logo-img">
+                    </a>
+                </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -276,269 +731,288 @@
             
                                 <!-- Portfolio Content -->
                                 <div class="portfoloi_content_area">
-                                    <!--
+                                    <!-- Pillar Introduction Sections -->
+                                    <div class="pillar-intro-sections">
+                                        <div class="pillar-intro active" id="all-projects-intro">
+                                            <h3>Our Projects</h3>
+                                            <p>Explore our diverse range of projects spanning architectural excellence and sustainable certification.</p>
+                                        </div>
+                                        
+                                        <div class="pillar-intro" id="architectural-designs-intro">
+                                            <h3>Architectural Designs</h3>
+                                            <p class="pillar-subtitle">Conceptual Excellence, Built to Last.</p>
+                                            <p>From bespoke residential sanctuaries to high-impact commercial hubs, we create spaces that tell stories through design.</p>
+                                            <div class="subcategory-filters">
+                                                <button class="subcategory-btn" data-filter=".residential">Residential</button>
+                                                <button class="subcategory-btn" data-filter=".commercial">Commercial</button>
+                                                <button class="subcategory-btn" data-filter=".interiors">Interiors</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="pillar-intro" id="edge-auditors-intro">
+                                            <h3>EDGE Auditors</h3>
+                                            <p class="pillar-subtitle">Data-Driven Sustainability.</p>
+                                            <p>Beyond aesthetics, we provide the technical roadmap for resource-efficient buildings through comprehensive sustainability certification.</p>
+                                            <div class="subcategory-filters">
+                                                <button class="subcategory-btn" data-filter=".resource-efficiency">Resource Efficiency</button>
+                                                <button class="subcategory-btn" data-filter=".certifications">Certifications</button>
+                                                <button class="subcategory-btn" data-filter=".our-role">Our Role</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Global Filter Menu -->
                                     <div class="portfolio_menu">
                                         <div class="filters">
                                             <ul>
                                                 <li class="active" data-filter="*">All Projects</li>
-                                                <li data-filter=".edge">EDGE Certification</li>
-                                                <li data-filter=".green-design">Green Design</li>
+                                                <li data-filter=".architectural-design">Architectural Designs</li>
+                                                <li data-filter=".edge-auditors">EDGE Auditors</li>
                                             </ul>
                                         </div>
-                                    </div> -->
+                                    </div>
                 
                                     <div class="portfolio_content">
                                         <div class="row">
-                                            <!-- Project 1 -->
-                                            <div class="col-md-4 col-sm-6 mix edge">
-                                                <div class="portfolio_single_content">
-                                                    <div class="img-wrapper">
-                                                        <img src="img\portfolio\p9.jpg" alt="Arth Biobag Rwanda Project" class="img-responsive">
-                                                        <div class="portfolio_hover">
-                                                            <div class="portfolio_hover_inner">
-                                                                <a class="portfolio-link" href="#">View Details</a>
-                                                            </div>
+                                            <!-- Project 1: EDGE Auditors - Certifications -->
+                                            <div class="col-md-4 col-sm-6 mix edge-auditors certifications edge commercial">
+                                                <article class="project-card animate-on-scroll" data-category="edge commercial">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Arth Biobag Rwanda Project - EDGE Certified Sustainable Packaging Facility">
+                                                        <span class="project-badge">EDGE Certified</span>
+                                                        <div class="project-overlay">
+                                                            <a href="" class="btn btn-primary">View Details</a>
                                                         </div>
                                                     </div>
-                                                    <div class="portfolio-details">
-                                                        <div class="portfolio-title">
-                                                            <h4>EDGE Certification: Arth Biobag Rwanda</h4>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
+                                                            <span><i class="fas fa-ruler-combined"></i> 2,500 sqm</span>
+                                                            <span><i class="fas fa-clock"></i> 8 Months</span>
                                                         </div>
-                                                        <div class="portfolio-description">
-                                                            <ul>
-                                                                <li><strong>🌍 Client:</strong> Arth Biobag Rwanda</li>
-                                                                <li><strong>🏭 Sector:</strong> Sustainable Packaging / Light Industrial</li>
-                                                                <li><strong>📍 Location:</strong> Rwanda</li>
-                                                                <li><strong>📋 Service:</strong> EDGE Certification Audit</li>
-                                                                <li><strong>✅ Status:</strong> Preliminary EDGE Certification Awarded</li>
-                                                            </ul>
+                                                        <h3 class="project-title">EDGE Certification: Arth Biobag Rwanda</h3>
+                                                        <p class="project-description">Preliminary EDGE Certification awarded for sustainable packaging facility with 20% energy savings.</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag certified">EDGE Certified</span>
+                                                            <span class="tag">Industrial</span>
+                                                            <span class="tag">Completed</span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </article>
                                             </div>
                                             
-                                            <!-- Project 2 -->
-                                            <div class="col-md-4 col-sm-6 mix green-design">
-                                                <div class="portfolio_single_content">
-                                                    <div class="img-wrapper">
-                                                        <img src="img\portfolio\p9.jpg" alt="Green Residential Complex" class="img-responsive">
-                                                        <div class="portfolio_hover">
-                                                            <div class="portfolio_hover_inner">
-                                                                <a class="portfolio-link" href="#">View Details</a>
-                                                            </div>
+                                            <!-- Project 2: Architectural Designs - Residential -->
+                                            <div class="col-md-4 col-sm-6 mix architectural-design residential green-design">
+                                                <article class="project-card animate-on-scroll" data-category="green residential">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Green Residential Complex - Luxury Sustainable Housing with Rainwater Harvesting">
+                                                        <div class="project-overlay">
+                                                            <a href="" class="btn btn-primary">View Details</a>
                                                         </div>
                                                     </div>
-                                                    <div class="portfolio-details">
-                                                        <div class="portfolio-title">
-                                                            <h4>Green Residential Complex</h4>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</span>
+                                                            <span><i class="fas fa-ruler-combined"></i> 1,800 sqm</span>
+                                                            <span><i class="fas fa-clock"></i> 14 Months</span>
                                                         </div>
-                                                        <div class="portfolio-description">
-                                                            <ul>
-                                                                <li><strong>🌍 Client:</strong> Private Developer</li>
-                                                                <li><strong>🏭 Sector:</strong> Residential</li>
-                                                                <li><strong>📍 Location:</strong> Kigali, Rwanda</li>
-                                                                <li><strong>📋 Service:</strong> Sustainable Design Consultancy</li>
-                                                                <li><strong>✅ Status:</strong> Design Phase</li>
-                                                            </ul>
+                                                        <h3 class="project-title">Green Residential Complex</h3>
+                                                        <p class="project-description">Luxury residential complex featuring rainwater harvesting, solar panels, and native landscaping for sustainable living.</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag">Residential</span>
+                                                            <span class="tag">Green Design</span>
+                                                            <span class="tag">Design Phase</span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </article>
                                             </div>
                                             
-                                            <!-- Project 3 -->
-                                            <div class="col-md-4 col-sm-6 mix edge">
-                                                <div class="portfolio_single_content">
-                                                    <div class="img-wrapper">
-                                                        <img src="img\portfolio\p9.jpg" alt="Commercial Office Building" class="img-responsive">
-                                                        <div class="portfolio_hover">
-                                                            <div class="portfolio_hover_inner">
-                                                                <a class="portfolio-link" href="#">View Details</a>
-                                                            </div>
+                                            <!-- Project 3: Architectural Designs - Commercial -->
+                                            <div class="col-md-4 col-sm-6 mix architectural-design commercial edge">
+                                                <article class="project-card animate-on-scroll" data-category="edge commercial">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Commercial Office Building - EDGE Certified with Energy-Efficient HVAC Systems">
+                                                        <span class="project-badge">EDGE Certified</span>
+                                                        <div class="project-overlay">
+                                                            <a href="" class="btn btn-primary">View Details</a>
+                                                            <!-- <a href="project-details.html?project=commercial-office" class="btn btn-primary">View Details</a> -->
+
                                                         </div>
                                                     </div>
-                                                    <div class="portfolio-details">
-                                                        <div class="portfolio-title">
-                                                            <h4>Commercial Office Building</h4>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</span>
+                                                            <span><i class="fas fa-ruler-combined"></i> 3,200 sqm</span>
+                                                            <span><i class="fas fa-clock"></i> 18 Months</span>
                                                         </div>
-                                                        <div class="portfolio-description">
-                                                            <ul>
-                                                                <li><strong>🌍 Client:</strong> Corporate Client</li>
-                                                                <li><strong>🏭 Sector:</strong> Commercial</li>
-                                                                <li><strong>📍 Location:</strong> Rwanda</li>
-                                                                <li><strong>📋 Service:</strong> EDGE Certification & Green Design</li>
-                                                                <li><strong>✅ Status:</strong> Construction Phase</li>
-                                                            </ul>
+                                                        <h3 class="project-title">Commercial Office Building</h3>
+                                                        <p class="project-description">Modern office building with EDGE certification, featuring energy-efficient HVAC and smart building systems.</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag certified">EDGE Certified</span>
+                                                            <span class="tag">Commercial</span>
+                                                            <span class="tag">Construction Phase</span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </article>
                                             </div>
                                             
-                                            <!-- Project 4 -->
-                                            <div class="col-md-4 col-sm-6 mix green-design">
-                                                <div class="portfolio_single_content">
-                                                    <div class="img-wrapper">
-                                                        <img src="img\portfolio\p9.jpg" alt="Educational Facility" class="img-responsive">
-                                                        <div class="portfolio_hover">
-                                                            <div class="portfolio_hover_inner">
-                                                                <a class="portfolio-link" href="#">View Details</a>
-                                                            </div>
+                                            <!-- Project 4: EDGE Auditors - Resource Efficiency -->
+                                            <div class="col-md-4 col-sm-6 mix edge-auditors resource-efficiency green-design">
+                                                <article class="project-card animate-on-scroll" data-category="green-design">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Sustainable Educational Facility - Whole Building Green Design for Learning Institution">
+                                                        <div class="project-overlay">
+                                                            <a href="#" class="btn btn-primary">View Details</a>
                                                         </div>
                                                     </div>
-                                                    <div class="portfolio-details">
-                                                        <div class="portfolio-title">
-                                                            <h4>Sustainable Educational Facility</h4>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
+                                                            <span><i class="fas fa-ruler-combined"></i> 2,800 sqm</span>
+                                                            <span><i class="fas fa-clock"></i> 12 Months</span>
                                                         </div>
-                                                        <div class="portfolio-description">
-                                                            <ul>
-                                                                <li><strong>🌍 Client:</strong> Educational Institution</li>
-                                                                <li><strong>🏭 Sector:</strong> Education</li>
-                                                                <li><strong>📍 Location:</strong> Rwanda</li>
-                                                                <li><strong>📋 Service:</strong> Whole Building Sustainable Design</li>
-                                                                <li><strong>✅ Status:</strong> Completed</li>
-                                                            </ul>
+                                                        <h3 class="project-title">Sustainable Educational Facility</h3>
+                                                        <p class="project-description">Whole building sustainable design for educational institution focusing on energy efficiency and optimal learning environments.</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag">Education</span>
+                                                            <span class="tag">Green Design</span>
+                                                            <span class="tag">Completed</span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </article>
                                             </div>
                                             
-                                            <!-- Project 5 -->
-                                            <div class="col-md-4 col-sm-6 mix edge">
-                                                <div class="portfolio_single_content">
-                                                    <div class="img-wrapper">
-                                                        <img src="img\portfolio\p9.jpg" alt="Healthcare Facility" class="img-responsive">
-                                                        <div class="portfolio_hover">
-                                                            <div class="portfolio_hover_inner">
-                                                                <a class="portfolio-link" href="#">View Details</a>
-                                                            </div>
+                                            <!-- Project 5: EDGE Auditors - Certifications -->
+                                            <div class="col-md-4 col-sm-6 mix edge-auditors certifications edge">
+                                                <article class="project-card animate-on-scroll" data-category="edge healthcare">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Green Healthcare Facility - EDGE Certified Medical Building with Energy-Efficient Systems">
+                                                        <span class="project-badge">EDGE Certified</span>
+                                                        <div class="project-overlay">
+                                                            <a href="#" class="btn btn-primary">View Details</a>
                                                         </div>
                                                     </div>
-                                                    <div class="portfolio-details">
-                                                        <div class="portfolio-title">
-                                                            <h4>Green Healthcare Facility</h4>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
+                                                            <span><i class="fas fa-ruler-combined"></i> 3,500 sqm</span>
+                                                            <span><i class="fas fa-clock"></i> 16 Months</span>
                                                         </div>
-                                                        <div class="portfolio-description">
-                                                            <ul>
-                                                                <li><strong>🌍 Client:</strong> Healthcare Provider</li>
-                                                                <li><strong>🏭 Sector:</strong> Healthcare</li>
-                                                                <li><strong>📍 Location:</strong> Rwanda</li>
-                                                                <li><strong>📋 Service:</strong> EDGE Certification & Compliance</li>
-                                                                <li><strong>✅ Status:</strong> Operational</li>
-                                                            </ul>
+                                                        <h3 class="project-title">Green Healthcare Facility</h3>
+                                                        <p class="project-description">EDGE certified medical building with energy-efficient systems, designed for optimal patient care and operational efficiency.</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag certified">EDGE Certified</span>
+                                                            <span class="tag">Healthcare</span>
+                                                            <span class="tag">Operational</span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </article>
                                             </div>
                                             
-                                            <!-- Project 6 -->
-                                            <div class="col-md-4 col-sm-6 mix green-design">
-                                                <div class="portfolio_single_content">
-                                                    <div class="img-wrapper">
-                                                        <img src="img\portfolio\p9.jpg" alt="Mixed-Use Development" class="img-responsive">
-                                                        <div class="portfolio_hover">
-                                                            <div class="portfolio_hover_inner">
-                                                                <a class="portfolio-link" href="#">View Details</a>
-                                                            </div>
+                                            <!-- Project 6: Architectural Designs - Commercial -->
+                                            <div class="col-md-4 col-sm-6 mix architectural-design commercial green-design">
+                                                <article class="project-card animate-on-scroll" data-category="mixed-use">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Mixed-Use Sustainable Development - Comprehensive Green Building Consultancy">
+                                                        <div class="project-overlay">
+                                                            <a href="#" class="btn btn-primary">View Details</a>
                                                         </div>
                                                     </div>
-                                                    <div class="portfolio-details">
-                                                        <div class="portfolio-title">
-                                                            <h4>Mixed-Use Sustainable Development</h4>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</span>
+                                                            <span><i class="fas fa-ruler-combined"></i> 4,200 sqm</span>
+                                                            <span><i class="fas fa-clock"></i> 24 Months</span>
                                                         </div>
-                                                        <div class="portfolio-description">
-                                                            <ul>
-                                                                <li><strong>🌍 Client:</strong> Development Group</li>
-                                                                <li><strong>🏭 Sector:</strong> Mixed-Use</li>
-                                                                <li><strong>📍 Location:</strong> Kigali, Rwanda</li>
-                                                                <li><strong>📋 Service:</strong> Comprehensive Green Building Consultancy</li>
-                                                                <li><strong>✅ Status:</strong> Planning Phase</li>
-                                                            </ul>
+                                                        <h3 class="project-title">Mixed-Use Sustainable Development</h3>
+                                                        <p class="project-description">Comprehensive green building consultancy for mixed-use development integrating residential, commercial, and recreational spaces.</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag">Mixed-Use</span>
+                                                            <span class="tag">Green Design</span>
+                                                            <span class="tag">Planning Phase</span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </article>
                                             </div>
                                             
-                                            <!-- Project 7 -->
-                                            <div class="col-md-4 col-sm-6 mix edge">
-                                                <div class="portfolio_single_content">
-                                                    <div class="img-wrapper">
-                                                        <img src="img\portfolio\p9.jpg" alt="Industrial Facility" class="img-responsive">
-                                                        <div class="portfolio_hover">
-                                                            <div class="portfolio_hover_inner">
-                                                                <a class="portfolio-link" href="#">View Details</a>
-                                                            </div>
+                                            <!-- Project 7: EDGE Auditors - Resource Efficiency -->
+                                            <div class="col-md-4 col-sm-6 mix edge-auditors resource-efficiency edge">
+                                                <article class="project-card animate-on-scroll" data-category="edge industrial">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Sustainable Industrial Facility - EDGE Certification & Energy Efficiency for Manufacturing">
+                                                        <span class="project-badge">EDGE Certified</span>
+                                                        <div class="project-overlay">
+                                                            <a href="#" class="btn btn-primary">View Details</a>
                                                         </div>
                                                     </div>
-                                                    <div class="portfolio-details">
-                                                        <div class="portfolio-title">
-                                                            <h4>Sustainable Industrial Facility</h4>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
+                                                            <span><i class="fas fa-ruler-combined"></i> 5,000 sqm</span>
+                                                            <span><i class="fas fa-clock"></i> 20 Months</span>
                                                         </div>
-                                                        <div class="portfolio-description">
-                                                            <ul>
-                                                                <li><strong>🌍 Client:</strong> Manufacturing Company</li>
-                                                                <li><strong>🏭 Sector:</strong> Industrial</li>
-                                                                <li><strong>📍 Location:</strong> Rwanda</li>
-                                                                <li><strong>📋 Service:</strong> EDGE Certification & Energy Efficiency</li>
-                                                                <li><strong>✅ Status:</strong> Design Phase</li>
-                                                            </ul>
+                                                        <h3 class="project-title">Sustainable Industrial Facility</h3>
+                                                        <p class="project-description">EDGE certification and energy efficiency optimization for manufacturing facility, reducing operational costs and environmental impact.</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag certified">EDGE Certified</span>
+                                                            <span class="tag">Industrial</span>
+                                                            <span class="tag">Design Phase</span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </article>
                                             </div>
                                             
-                                            <!-- Project 8 -->
-                                            <div class="col-md-4 col-sm-6 mix green-design">
-                                                <div class="portfolio_single_content">
-                                                    <div class="img-wrapper">
-                                                        <img src="img\portfolio\p9.jpg" alt="Hospitality Project" class="img-responsive">
-                                                        <div class="portfolio_hover">
-                                                            <div class="portfolio_hover_inner">
-                                                                <a class="portfolio-link" href="#">View Details</a>
-                                                            </div>
+                                            <!-- Project 8: Architectural Designs - Hospitality/Interiors -->
+                                            <div class="col-md-4 col-sm-6 mix architectural-design interiors green-design">
+                                                <article class="project-card animate-on-scroll" data-category="hospitality">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Eco-Friendly Hospitality Project - Green Building & Sustainable Design for Hotel">
+                                                        <div class="project-overlay">
+                                                            <a href="#" class="btn btn-primary">View Details</a>
                                                         </div>
                                                     </div>
-                                                    <div class="portfolio-details">
-                                                        <div class="portfolio-title">
-                                                            <h4>Eco-Friendly Hospitality Project</h4>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
+                                                            <span><i class="fas fa-ruler-combined"></i> 3,800 sqm</span>
+                                                            <span><i class="fas fa-clock"></i> 22 Months</span>
                                                         </div>
-                                                        <div class="portfolio-description">
-                                                            <ul>
-                                                                <li><strong>🌍 Client:</strong> Hotel Group</li>
-                                                                <li><strong>🏭 Sector:</strong> Hospitality</li>
-                                                                <li><strong>📍 Location:</strong> Rwanda</li>
-                                                                <li><strong>📋 Service:</strong> Green Building & Sustainable Design</li>
-                                                                <li><strong>✅ Status:</strong> Construction Phase</li>
-                                                            </ul>
+                                                        <h3 class="project-title">Eco-Friendly Hospitality Project</h3>
+                                                        <p class="project-description">Green building and sustainable design for hotel, focusing on energy efficiency, water conservation, and guest comfort.</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag">Hospitality</span>
+                                                            <span class="tag">Green Design</span>
+                                                            <span class="tag">Construction Phase</span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </article>
                                             </div>
                                             
-                                            <!-- Project 9 -->
-                                            <div class="col-md-4 col-sm-6 mix edge green-design">
-                                                <div class="portfolio_single_content">
-                                                    <div class="img-wrapper">
-                                                        <img src="img\portfolio\p9.jpg" alt="Public Building" class="img-responsive">
-                                                        <div class="portfolio_hover">
-                                                            <div class="portfolio_hover_inner">
-                                                                <a class="portfolio-link" href="#">View Details</a>
-                                                            </div>
+                                            <!-- Project 9: EDGE Auditors - Our Role -->
+                                            <div class="col-md-4 col-sm-6 mix edge-auditors our-role edge green-design">
+                                                <article class="project-card animate-on-scroll" data-category="edge public">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Sustainable Public Building - Complete Sustainable Design & EDGE Certification for Government Facility">
+                                                        <span class="project-badge">EDGE Certified</span>
+                                                        <div class="project-overlay">
+                                                            <a href="#" class="btn btn-primary">View Details</a>
                                                         </div>
                                                     </div>
-                                                    <div class="portfolio-details">
-                                                        <div class="portfolio-title">
-                                                            <h4>Sustainable Public Building</h4>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
+                                                            <span><i class="fas fa-ruler-combined"></i> 4,500 sqm</span>
+                                                            <span><i class="fas fa-clock"></i> 28 Months</span>
                                                         </div>
-                                                        <div class="portfolio-description">
-                                                            <ul>
-                                                                <li><strong>🌍 Client:</strong> Government Agency</li>
-                                                                <li><strong>🏭 Sector:</strong> Public Infrastructure</li>
-                                                                <li><strong>📍 Location:</strong> Rwanda</li>
-                                                                <li><strong>📋 Service:</strong> Complete Sustainable Design & EDGE</li>
-                                                                <li><strong>✅ Status:</strong> Completed</li>
-                                                            </ul>
+                                                        <h3 class="project-title">Sustainable Public Building</h3>
+                                                        <p class="project-description">Complete sustainable design and EDGE certification for government facility, demonstrating public sector leadership in green building.</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag certified">EDGE Certified</span>
+                                                            <span class="tag">Public Infrastructure</span>
+                                                            <span class="tag">Completed</span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </article>
                                             </div>
                                         </div>
                                     </div>
@@ -1113,31 +1587,8 @@
                 }, 3000);
             }
 
-            // Portfolio Filtering (Commented out in HTML, but added for future use)
-            const portfolioItems = document.querySelectorAll('.portfolio_single_content');
-            const filterButtons = document.querySelectorAll('.filters ul li');
-
-            if (filterButtons.length > 0) {
-                filterButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        // Remove active class from all buttons
-                        filterButtons.forEach(btn => btn.classList.remove('active'));
-                        this.classList.add('active');
-
-                        // Get the filter value
-                        const filter = this.getAttribute('data-filter');
-
-                        portfolioItems.forEach(item => {
-                            // Show/hide items based on filter
-                            if (filter === '*' || item.classList.contains(filter.replace('.', ''))) {
-                                item.style.display = 'block';
-                            } else {
-                                item.style.display = 'none';
-                            }
-                        });
-                    });
-                });
-            }
+            // Portfolio Filtering is now handled by Isotope.js in theme.js
+            // The new pillar-based filtering system provides seamless project rearrangement
 
             // Project Details Modal (Placeholder functionality)
             const projectLinks = document.querySelectorAll('.portfolio-link');

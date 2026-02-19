@@ -90,10 +90,74 @@ $("#owl-intro-text").owlCarousel({
     pagination : true
 })
 
-// Portfolio filtering
-$('.portfolio_content').isotope({
-    itemSelector: '.mix',
-    layoutMode: 'fitRows'
+// Portfolio filtering with pillars
+$(document).ready(function() {
+    // Initialize Isotope
+    var $portfolioContent = $('.portfolio_content');
+    $portfolioContent.isotope({
+        itemSelector: '.mix',
+        layoutMode: 'fitRows',
+        filter: '*'
+    });
+
+    // Global filter buttons
+    $('.filters ul li').click(function() {
+        // Remove active class from all filter buttons
+        $('.filters ul li').removeClass('active');
+        $(this).addClass('active');
+        
+        // Get filter value
+        var filterValue = $(this).attr('data-filter');
+        
+        // Apply filter
+        $portfolioContent.isotope({ filter: filterValue });
+        
+        // Update pillar intro sections
+        updatePillarIntro(filterValue);
+        
+        // Reset subcategory buttons
+        $('.subcategory-btn').removeClass('active');
+    });
+
+    // Subcategory filter buttons
+    $('.subcategory-btn').click(function() {
+        // Remove active class from all subcategory buttons
+        $('.subcategory-btn').removeClass('active');
+        $(this).addClass('active');
+        
+        // Get filter value
+        var filterValue = $(this).attr('data-filter');
+        
+        // Apply filter
+        $portfolioContent.isotope({ filter: filterValue });
+    });
+
+    // Function to update pillar intro sections
+    function updatePillarIntro(filterValue) {
+        // Hide all pillar intros
+        $('.pillar-intro').removeClass('active');
+        
+        // Show appropriate intro based on filter
+        if (filterValue === '*') {
+            $('#all-projects-intro').addClass('active');
+        } else if (filterValue === '.architectural-design') {
+            $('#architectural-designs-intro').addClass('active');
+        } else if (filterValue === '.edge-auditors') {
+            $('#edge-auditors-intro').addClass('active');
+        } else {
+            // For subcategory filters, show the parent pillar intro
+            if (filterValue.includes('residential') || filterValue.includes('commercial') || filterValue.includes('interiors')) {
+                $('#architectural-designs-intro').addClass('active');
+            } else if (filterValue.includes('resource-efficiency') || filterValue.includes('certifications') || filterValue.includes('our-role')) {
+                $('#edge-auditors-intro').addClass('active');
+            } else {
+                $('#all-projects-intro').addClass('active');
+            }
+        }
+    }
+
+    // Initialize with all projects intro
+    updatePillarIntro('*');
 });
 
 // Partner carousel
