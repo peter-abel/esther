@@ -97,7 +97,7 @@ $(document).ready(function() {
     $portfolioContent.isotope({
         itemSelector: '.mix',
         layoutMode: 'fitRows',
-        filter: '*'
+        filter: '.architectural-design'
     });
 
     // Global filter buttons
@@ -138,9 +138,7 @@ $(document).ready(function() {
         $('.pillar-intro').removeClass('active');
         
         // Show appropriate intro based on filter
-        if (filterValue === '*') {
-            $('#all-projects-intro').addClass('active');
-        } else if (filterValue === '.architectural-design') {
+        if (filterValue === '.architectural-design') {
             $('#architectural-designs-intro').addClass('active');
         } else if (filterValue === '.edge-auditors') {
             $('#edge-auditors-intro').addClass('active');
@@ -151,13 +149,14 @@ $(document).ready(function() {
             } else if (filterValue.includes('resource-efficiency') || filterValue.includes('certifications') || filterValue.includes('our-role')) {
                 $('#edge-auditors-intro').addClass('active');
             } else {
-                $('#all-projects-intro').addClass('active');
+                // Default to architectural designs if no match
+                $('#architectural-designs-intro').addClass('active');
             }
         }
     }
 
-    // Initialize with all projects intro
-    updatePillarIntro('*');
+    // Initialize with architectural designs intro
+    updatePillarIntro('.architectural-design');
 });
 
 // Partner carousel
