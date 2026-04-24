@@ -91,72 +91,64 @@ $("#owl-intro-text").owlCarousel({
 })
 
 // Portfolio filtering with pillars
-$(document).ready(function() {
-    // Initialize Isotope
-    var $portfolioContent = $('.portfolio_content');
-    $portfolioContent.isotope({
-        itemSelector: '.mix',
-        layoutMode: 'fitRows',
-        filter: '.architectural-design'
+function applyFilter(filterClass) {
+    $('.portfolio_content .mix').each(function() {
+        if ($(this).hasClass(filterClass)) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
     });
+}
 
-    // Global filter buttons
-    $('.filters ul li').click(function() {
-        // Remove active class from all filter buttons
+function updatePillarIntro(filterClass) {
+    $('.pillar-intro').removeClass('active');
+    var isEdgeSub = filterClass.indexOf('edge-') === 0;
+    if (filterClass === 'architectural-design' ||
+        filterClass === 'residential' ||
+        filterClass === 'commercial'  ||
+        filterClass === 'interiors') {
+        $('#architectural-designs-intro').addClass('active');
+    } else {
+        $('#edge-auditors-intro').addClass('active');
+    }
+}
+
+$(document).ready(function() {
+
+    // --- Global pillar filter buttons ---
+    $('.filters ul li').on('click', function() {
         $('.filters ul li').removeClass('active');
         $(this).addClass('active');
-        
-        // Get filter value
-        var filterValue = $(this).attr('data-filter');
-        
-        // Apply filter
-        $portfolioContent.isotope({ filter: filterValue });
-        
-        // Update pillar intro sections
-        updatePillarIntro(filterValue);
-        
-        // Reset subcategory buttons
         $('.subcategory-btn').removeClass('active');
+
+        var filterClass = $(this).attr('data-filter').replace(/^\./, '');
+        applyFilter(filterClass);
+        updatePillarIntro(filterClass);
     });
 
-    // Subcategory filter buttons
-    $('.subcategory-btn').click(function() {
-        // Remove active class from all subcategory buttons
+    // --- Subcategory filter buttons ---
+    $('.subcategory-btn').on('click', function() {
         $('.subcategory-btn').removeClass('active');
         $(this).addClass('active');
-        
-        // Get filter value
-        var filterValue = $(this).attr('data-filter');
-        
-        // Apply filter
-        $portfolioContent.isotope({ filter: filterValue });
+
+        var filterClass = $(this).attr('data-filter').replace(/^\./, '');
+        applyFilter(filterClass);
+        updatePillarIntro(filterClass);
+
+        // Highlight the correct global pillar button
+        var parentPillarClass = filterClass.indexOf('edge-') === 0 ? 'edge-auditors' : 'architectural-design';
+        $('.filters ul li').removeClass('active');
+        $('.filters ul li').each(function() {
+            if ($(this).attr('data-filter').replace(/^\./, '') === parentPillarClass) {
+                $(this).addClass('active');
+            }
+        });
     });
 
-    // Function to update pillar intro sections
-    function updatePillarIntro(filterValue) {
-        // Hide all pillar intros
-        $('.pillar-intro').removeClass('active');
-        
-        // Show appropriate intro based on filter
-        if (filterValue === '.architectural-design') {
-            $('#architectural-designs-intro').addClass('active');
-        } else if (filterValue === '.edge-auditors') {
-            $('#edge-auditors-intro').addClass('active');
-        } else {
-            // For subcategory filters, show the parent pillar intro
-            if (filterValue.includes('residential') || filterValue.includes('commercial') || filterValue.includes('interiors')) {
-                $('#architectural-designs-intro').addClass('active');
-            } else if (filterValue.includes('resource-efficiency') || filterValue.includes('certifications') || filterValue.includes('our-role')) {
-                $('#edge-auditors-intro').addClass('active');
-            } else {
-                // Default to architectural designs if no match
-                $('#architectural-designs-intro').addClass('active');
-            }
-        }
-    }
-
-    // Initialize with architectural designs intro
-    updatePillarIntro('.architectural-design');
+    // --- Initialise: show Architectural Designs cards only ---
+    applyFilter('architectural-design');
+    updatePillarIntro('architectural-design');
 });
 
 // Partner carousel
@@ -210,25 +202,8 @@ $('.counter').counterUp({
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-// Isotop Package
+// Isotop Package (Legacy - kept for reference)
 ////////////////////////////////////////////////////////////////////////////////////////////
-$(window).load(function() {
-$('.portfolio_menu ul li').click(function(){
-	$('.portfolio_menu ul li').removeClass('active_prot_menu');
-	$(this).addClass('active_prot_menu');
-});
-
-var $container = $('#portfolio');
-$container.isotope({
-  itemSelector: '.col-sm-4',
-  layoutMode: 'fitRows'
-});
-$('#filters').on( 'click', 'a', function() {
-  var filterValue = $(this).attr('data-filter');
-  $container.isotope({ filter: filterValue });
-  return false;
-});
-});
 
 
 

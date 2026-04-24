@@ -426,6 +426,7 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                object-position: top;
                 transition: transform 0.6s ease;
             }
 
@@ -611,10 +612,23 @@
                 margin-bottom: 30px;
             }
 
-            /* Fix for Isotope grid items */
+            /* Portfolio grid items - hidden by JS filter on init */
             .portfolio_content .mix {
-                display: block !important;
-                opacity: 1 !important;
+                display: none;
+            }
+
+            /* Fix Isotope container to prevent clipping and overlapping */
+            .portfolio_content {
+                position: relative !important;
+                overflow: visible !important;
+                min-height: 400px;
+            }
+            
+            /* Fix row margins inside Isotope container */
+            .portfolio_content .row {
+                overflow: visible !important;
+                margin-left: 0;
+                margin-right: 0;
             }
 
             /* Debug - add a temporary background to see the section */
@@ -759,43 +773,16 @@
                                             <p class="pillar-subtitle">Data-Driven Sustainability.</p>
                                             <p>Beyond aesthetics, we provide the technical roadmap for resource-efficient buildings through comprehensive sustainability certification.</p>
                                             <div class="subcategory-filters">
-                                                <button class="subcategory-btn" data-filter=".resource-efficiency">Resource Efficiency</button>
-                                                <button class="subcategory-btn" data-filter=".certifications">Certifications</button>
-                                                <button class="subcategory-btn" data-filter=".our-role">Our Role</button>
+                                                <button class="subcategory-btn" data-filter=".edge-commercial">Commercial Projects</button>
+                                                <button class="subcategory-btn" data-filter=".edge-residential">Residential Projects</button>
+                                                <button class="subcategory-btn" data-filter=".edge-institutional">Institutional Projects</button>
                                             </div>
                                         </div>
                                     </div>
                 
                                     <div class="portfolio_content">
                                         <div class="row">
-                                            <!-- Project 1: EDGE Auditors - Certifications -->
-                                            <div class="col-md-4 col-sm-6 mix edge-auditors certifications edge commercial">
-                                                <article class="project-card animate-on-scroll" data-category="edge commercial">
-                                                    <div class="project-image">
-                                                        <img src="img\portfolio\p9.jpg" alt="Arth Biobag Rwanda Project - EDGE Certified Sustainable Packaging Facility">
-                                                        <span class="project-badge">EDGE Certified</span>
-                                                        <div class="project-overlay">
-                                                            <a href="" class="btn btn-primary">View Details</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="project-content">
-                                                        <div class="project-meta">
-                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
-                                                            <span><i class="fas fa-ruler-combined"></i> 2,500 sqm</span>
-                                                            <span><i class="fas fa-clock"></i> 8 Months</span>
-                                                        </div>
-                                                        <h3 class="project-title">EDGE Certification: Arth Biobag Rwanda</h3>
-                                                        <p class="project-description">Preliminary EDGE Certification awarded for sustainable packaging facility with 20% energy savings.</p>
-                                                        <div class="project-tags">
-                                                            <span class="tag certified">EDGE Certified</span>
-                                                            <span class="tag">Industrial</span>
-                                                            <span class="tag">Completed</span>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                            
-                                            <!-- Project 2: Architectural Designs - Residential -->
+                                            <!-- Project 1: Architectural Designs - Residential -->
                                             <div class="col-md-4 col-sm-6 mix architectural-design residential green-design">
                                                 <article class="project-card animate-on-scroll" data-category="green residential">
                                                     <div class="project-image">
@@ -821,7 +808,7 @@
                                                 </article>
                                             </div>
                                             
-                                            <!-- Project 3: Architectural Designs - Commercial -->
+                                            <!-- Project 2: Architectural Designs - Commercial -->
                                             <div class="col-md-4 col-sm-6 mix architectural-design commercial edge">
                                                 <article class="project-card animate-on-scroll" data-category="edge commercial">
                                                     <div class="project-image">
@@ -850,60 +837,7 @@
                                                 </article>
                                             </div>
                                             
-                                            <!-- Project 4: EDGE Auditors - Resource Efficiency -->
-                                            <div class="col-md-4 col-sm-6 mix edge-auditors resource-efficiency green-design">
-                                                <article class="project-card animate-on-scroll" data-category="green-design">
-                                                    <div class="project-image">
-                                                        <img src="img\portfolio\p9.jpg" alt="Sustainable Educational Facility - Whole Building Green Design for Learning Institution">
-                                                        <div class="project-overlay">
-                                                            <a href="#" class="btn btn-primary">View Details</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="project-content">
-                                                        <div class="project-meta">
-                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
-                                                            <span><i class="fas fa-ruler-combined"></i> 2,800 sqm</span>
-                                                            <span><i class="fas fa-clock"></i> 12 Months</span>
-                                                        </div>
-                                                        <h3 class="project-title">Sustainable Educational Facility</h3>
-                                                        <p class="project-description">Whole building sustainable design for educational institution focusing on energy efficiency and optimal learning environments.</p>
-                                                        <div class="project-tags">
-                                                            <span class="tag">Education</span>
-                                                            <span class="tag">Green Design</span>
-                                                            <span class="tag">Completed</span>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                            
-                                            <!-- Project 5: EDGE Auditors - Certifications -->
-                                            <div class="col-md-4 col-sm-6 mix edge-auditors certifications edge">
-                                                <article class="project-card animate-on-scroll" data-category="edge healthcare">
-                                                    <div class="project-image">
-                                                        <img src="img\portfolio\p9.jpg" alt="Green Healthcare Facility - EDGE Certified Medical Building with Energy-Efficient Systems">
-                                                        <span class="project-badge">EDGE Certified</span>
-                                                        <div class="project-overlay">
-                                                            <a href="#" class="btn btn-primary">View Details</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="project-content">
-                                                        <div class="project-meta">
-                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
-                                                            <span><i class="fas fa-ruler-combined"></i> 3,500 sqm</span>
-                                                            <span><i class="fas fa-clock"></i> 16 Months</span>
-                                                        </div>
-                                                        <h3 class="project-title">Green Healthcare Facility</h3>
-                                                        <p class="project-description">EDGE certified medical building with energy-efficient systems, designed for optimal patient care and operational efficiency.</p>
-                                                        <div class="project-tags">
-                                                            <span class="tag certified">EDGE Certified</span>
-                                                            <span class="tag">Healthcare</span>
-                                                            <span class="tag">Operational</span>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                            
-                                            <!-- Project 6: Architectural Designs - Commercial -->
+                                            <!-- Project 3: Architectural Designs - Commercial -->
                                             <div class="col-md-4 col-sm-6 mix architectural-design commercial green-design">
                                                 <article class="project-card animate-on-scroll" data-category="mixed-use">
                                                     <div class="project-image">
@@ -929,34 +863,7 @@
                                                 </article>
                                             </div>
                                             
-                                            <!-- Project 7: EDGE Auditors - Resource Efficiency -->
-                                            <div class="col-md-4 col-sm-6 mix edge-auditors resource-efficiency edge">
-                                                <article class="project-card animate-on-scroll" data-category="edge industrial">
-                                                    <div class="project-image">
-                                                        <img src="img\portfolio\p9.jpg" alt="Sustainable Industrial Facility - EDGE Certification & Energy Efficiency for Manufacturing">
-                                                        <span class="project-badge">EDGE Certified</span>
-                                                        <div class="project-overlay">
-                                                            <a href="#" class="btn btn-primary">View Details</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="project-content">
-                                                        <div class="project-meta">
-                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
-                                                            <span><i class="fas fa-ruler-combined"></i> 5,000 sqm</span>
-                                                            <span><i class="fas fa-clock"></i> 20 Months</span>
-                                                        </div>
-                                                        <h3 class="project-title">Sustainable Industrial Facility</h3>
-                                                        <p class="project-description">EDGE certification and energy efficiency optimization for manufacturing facility, reducing operational costs and environmental impact.</p>
-                                                        <div class="project-tags">
-                                                            <span class="tag certified">EDGE Certified</span>
-                                                            <span class="tag">Industrial</span>
-                                                            <span class="tag">Design Phase</span>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                            
-                                            <!-- Project 8: Architectural Designs - Hospitality/Interiors -->
+                                            <!-- Project 4: Architectural Designs - Hospitality/Interiors -->
                                             <div class="col-md-4 col-sm-6 mix architectural-design interiors green-design">
                                                 <article class="project-card animate-on-scroll" data-category="hospitality">
                                                     <div class="project-image">
@@ -982,11 +889,117 @@
                                                 </article>
                                             </div>
                                             
-                                            <!-- Project 9: EDGE Auditors - Our Role -->
-                                            <div class="col-md-4 col-sm-6 mix edge-auditors our-role edge green-design">
-                                                <article class="project-card animate-on-scroll" data-category="edge public">
+                                            <!-- ========== EDGE AUDITORS PROJECTS ========== -->
+                                            
+                                            <!-- EDGE Project 1: Commercial - Abby's Mixed Use -->
+                                            <div class="col-md-4 col-sm-6 mix edge-auditors edge-commercial">
+                                                <article class="project-card animate-on-scroll" data-category="edge commercial">
                                                     <div class="project-image">
-                                                        <img src="img\portfolio\p9.jpg" alt="Sustainable Public Building - Complete Sustainable Design & EDGE Certification for Government Facility">
+                                                        <img src="img\portfolio\ABBY'S-MiXED-USE-COMPLEX.png" alt="Abby's Mixed Use – Commercial">
+                                                        <span class="project-badge">EDGE Preliminary</span>
+                                                        <div class="project-overlay">
+                                                            <a href="#" class="btn btn-primary">View Details</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
+                                                            <span><i class="fas fa-tag"></i> Commercial</span>
+                                                            <span><i class="fas fa-calendar"></i> February 2026</span>
+                                                        </div>
+                                                        <h3 class="project-title">Abby's Mixed Use – Commercial</h3>
+                                                        <p class="project-description">EDGE Preliminary Certificate | February 2026</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag certified">EDGE Preliminary</span>
+                                                            <span class="tag">Commercial</span>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            
+                                            <!-- EDGE Project 2: Commercial - Arth Biobag Rwanda -->
+                                            <div class="col-md-4 col-sm-6 mix edge-auditors edge-commercial">
+                                                <article class="project-card animate-on-scroll" data-category="edge commercial">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\Arth-Bio-Bag.png" alt="Arth Biobag Rwanda">
+                                                        <span class="project-badge">EDGE Preliminary</span>
+                                                        <div class="project-overlay">
+                                                            <a href="#" class="btn btn-primary">View Details</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
+                                                            <span><i class="fas fa-tag"></i> Commercial</span>
+                                                            <span><i class="fas fa-calendar"></i> March 2025</span>
+                                                        </div>
+                                                        <h3 class="project-title">Arth Biobag Rwanda</h3>
+                                                        <p class="project-description">EDGE Preliminary Certificate | March 2025</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag certified">EDGE Preliminary</span>
+                                                            <span class="tag">Commercial</span>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            
+                                            <!-- EDGE Project 3: Residential - Abby's Mixed Use Apartments -->
+                                            <div class="col-md-4 col-sm-6 mix edge-auditors edge-residential">
+                                                <article class="project-card animate-on-scroll" data-category="edge residential">
+                                                    <div class="project-image">
+                                                        <img src="img/portfolio/ABBY'S-MIXED-USE-APARTMENTS.png" alt="Abby's Mixed Use – Apartments (22 Units)">
+                                                        <span class="project-badge">EDGE Preliminary</span>
+                                                        <div class="project-overlay">
+                                                            <a href="#" class="btn btn-primary">View Details</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
+                                                            <span><i class="fas fa-tag"></i> Residential</span>
+                                                            <span><i class="fas fa-calendar"></i> February 2026</span>
+                                                        </div>
+                                                        <h3 class="project-title">Abby's Mixed Use – Apartments (22 Units)</h3>
+                                                        <p class="project-description">EDGE Preliminary Certificate | February 2026</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag certified">EDGE Preliminary</span>
+                                                            <span class="tag">Residential</span>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            
+                                            <!-- EDGE Project 4: Residential - Sans Soucis Eco-Tower -->
+                                            <div class="col-md-4 col-sm-6 mix edge-auditors edge-residential">
+                                                <article class="project-card animate-on-scroll" data-category="edge residential">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Sans Soucis Eco-Tower">
+                                                        <span class="project-badge">EDGE Advanced</span>
+                                                        <div class="project-overlay">
+                                                            <a href="#" class="btn btn-primary">View Details</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
+                                                            <span><i class="fas fa-tag"></i> Residential</span>
+                                                            <span><i class="fas fa-calendar"></i> April 2025</span>
+                                                        </div>
+                                                        <h3 class="project-title">Sans Soucis Eco-Tower</h3>
+                                                        <p class="project-description">EDGE Advanced Preliminary Certificate | April 2025</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag certified">EDGE Advanced</span>
+                                                            <span class="tag">Residential</span>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            
+                                            <!-- EDGE Project 5: Residential - Landmark One -->
+                                            <div class="col-md-4 col-sm-6 mix edge-auditors edge-residential">
+                                                <article class="project-card animate-on-scroll" data-category="edge residential">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Landmark One">
                                                         <span class="project-badge">EDGE Certified</span>
                                                         <div class="project-overlay">
                                                             <a href="#" class="btn btn-primary">View Details</a>
@@ -995,15 +1008,40 @@
                                                     <div class="project-content">
                                                         <div class="project-meta">
                                                             <span><i class="fas fa-map-marker-alt"></i> Rwanda</span>
-                                                            <span><i class="fas fa-ruler-combined"></i> 4,500 sqm</span>
-                                                            <span><i class="fas fa-clock"></i> 28 Months</span>
+                                                            <span><i class="fas fa-tag"></i> Residential</span>
+                                                            <span><i class="fas fa-calendar"></i> April 2025</span>
                                                         </div>
-                                                        <h3 class="project-title">Sustainable Public Building</h3>
-                                                        <p class="project-description">Complete sustainable design and EDGE certification for government facility, demonstrating public sector leadership in green building.</p>
+                                                        <h3 class="project-title">Landmark One</h3>
+                                                        <p class="project-description">EDGE Certified Project | April 2025</p>
                                                         <div class="project-tags">
                                                             <span class="tag certified">EDGE Certified</span>
-                                                            <span class="tag">Public Infrastructure</span>
-                                                            <span class="tag">Completed</span>
+                                                            <span class="tag">Residential</span>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            
+                                            <!-- EDGE Project 6: Institutional - Kigali International Community School -->
+                                            <div class="col-md-4 col-sm-6 mix edge-auditors edge-institutional">
+                                                <article class="project-card animate-on-scroll" data-category="edge institutional">
+                                                    <div class="project-image">
+                                                        <img src="img\portfolio\p9.jpg" alt="Kigali International Community School">
+                                                        <span class="project-badge">EDGE Preliminary</span>
+                                                        <div class="project-overlay">
+                                                            <a href="#" class="btn btn-primary">View Details</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project-content">
+                                                        <div class="project-meta">
+                                                            <span><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</span>
+                                                            <span><i class="fas fa-tag"></i> Institutional</span>
+                                                            <span><i class="fas fa-calendar"></i> October 2025</span>
+                                                        </div>
+                                                        <h3 class="project-title">Kigali International Community School</h3>
+                                                        <p class="project-description">EDGE Preliminary Certificate | October 2025</p>
+                                                        <div class="project-tags">
+                                                            <span class="tag certified">EDGE Preliminary</span>
+                                                            <span class="tag">Institutional</span>
                                                         </div>
                                                     </div>
                                                 </article>
