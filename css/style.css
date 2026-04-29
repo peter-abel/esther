@@ -64,7 +64,7 @@ p {
 	font: 14px/1.5em "Roboto";
 }
 .navbar-nav > li > a {
-	font-family: "Lato", Helvetica, Arial, sans-serif;
+	font-family: "Poppins", Helvetica, Arial, sans-serif;
 }
 /* End Fonts */
 
@@ -210,6 +210,29 @@ section {
     background-color: transparent !important;
     color: #0097b2 !important;
     text-decoration: none !important;
+}
+
+/* Navbar search icon */
+.nav-search-icon {
+    padding: 24px 10px !important;
+    color: #3b3b3c !important;
+    font-size: 16px !important;
+    display: inline-block !important;
+    transition: color 0.3s ease !important;
+}
+
+.nav-search-icon:hover,
+.nav-search-icon:focus {
+    color: #0097b2 !important;
+}
+
+.navbar-transparent .nav-search-icon {
+    color: #ffffff !important;
+}
+
+.navbar-transparent .nav-search-icon:hover,
+.navbar-transparent .nav-search-icon:focus {
+    color: #0097b2 !important;
 }
 
 /* Navbar shrink state for contact button */
