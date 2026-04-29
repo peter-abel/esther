@@ -104,13 +104,13 @@ function applyFilter(filterClass) {
 function updatePillarIntro(filterClass) {
     $('.pillar-intro').removeClass('active');
     var isEdgeSub = filterClass.indexOf('edge-') === 0;
-    if (filterClass === 'architectural-design' ||
-        filterClass === 'residential' ||
-        filterClass === 'commercial'  ||
-        filterClass === 'interiors') {
-        $('#architectural-designs-intro').addClass('active');
-    } else {
+    if (filterClass === 'edge-auditors' ||
+        filterClass === 'edge-commercial' ||
+        filterClass === 'edge-residential' ||
+        filterClass === 'edge-institutional') {
         $('#edge-auditors-intro').addClass('active');
+    } else {
+        $('#architectural-designs-intro').addClass('active');
     }
 }
 
@@ -146,9 +146,9 @@ $(document).ready(function() {
         });
     });
 
-    // --- Initialise: show Architectural Designs cards only ---
-    applyFilter('architectural-design');
-    updatePillarIntro('architectural-design');
+    // --- Initialise: show EDGE Auditors cards first ---
+    applyFilter('edge-auditors');
+    updatePillarIntro('edge-auditors');
 });
 
 // Partner carousel

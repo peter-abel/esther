@@ -200,6 +200,30 @@
 		-moz-box-shadow: none !important;
 		box-shadow: none !important;
 	}
+	
+	/* Mobile contact button */
+	.btn-navbar-contact {
+		margin: 10px 0 !important;
+		display: inline-block !important;
+		width: auto !important;
+	}
+	
+	/* Reset center alignment on mobile */
+	.navbar-nav.navbar-center {
+		float: none;
+		display: block;
+	}
+	.navbar-collapse {
+		text-align: left;
+	}
+	.navbar-nav.navbar-right {
+		float: none;
+		text-align: left;
+	}
+	.navbar-nav.navbar-right > li {
+		display: block;
+	}
+
 
 	/* Navbar shrink toggle button */
 	.navbar-shrink .navbar-toggle .icon-bar {
