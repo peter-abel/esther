@@ -163,7 +163,7 @@
 		height: 3px;
 	}
 	.navbar-default .navbar-toggle .icon-bar {
-		background-color: #FFF !important;
+		background-color: #363940 !important;
 	}
 	.navbar-transparent .navbar-toggle .icon-bar {
 		background-color: #FFF !important;
@@ -203,7 +203,7 @@
 
 	/* Navbar shrink toggle button */
 	.navbar-shrink .navbar-toggle .icon-bar {
-		background-color: #FFF !important;
+		background-color: #363940 !important;
 	}
 	.navbar-inverse.navbar-shrink .navbar-toggle .icon-bar {
 		background-color: #FFF !important;

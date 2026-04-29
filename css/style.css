@@ -151,8 +151,7 @@ section {
     display: block;
 }
 
-.navbar-transparent .nav-logo-img,
-.navbar-default .nav-logo-img {
+.navbar-transparent .nav-logo-img {
     filter: brightness(0) invert(1); /* Makes logo white for transparent navbar */
 }
 
