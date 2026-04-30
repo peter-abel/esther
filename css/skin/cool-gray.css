@@ -138,9 +138,13 @@ a, a:hover, a:focus {
 
 
 /* === CTA Section, Social & Partners === */
-#cta-section, #partners-section, #social-section {
+#cta-section, #partners-section {
 	background: #f8f8f8 url('../../img/pat-bg.png') repeat;
 }
+#social-section {
+	background: #0097b2 !important;
+}
+
 
 
 /* === Portfolio === */
@@ -180,14 +184,9 @@ a, a:hover, a:focus {
 
 /* === Contact === */
 #contact-section {
-	background-color: #363940;
+	background-color: #3b3b3c !important;
 }
-#contact-section .contact .contact-form button {
-	background-color: #363940;
-}
-#contact-section .contact .contact-form button:hover {
-	background-color: #676D75;
-}
+
 
 
 
