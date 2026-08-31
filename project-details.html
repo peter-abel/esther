@@ -48,48 +48,6 @@
         <style>
             /* Project Details Specific Styling */
 
-            /* Logo Animation Section */
-            #logo-animation-section {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background-color: #ffffff;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 9999;
-                opacity: 1;
-                transition: opacity 1s ease-in-out;
-            }
-
-            #logo-animation-section.fade-out {
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            .logo-container {
-                text-align: center;
-            }
-
-            .animated-logo {
-                max-width: 80%;
-                max-height: 80vh;
-                animation: logoFadeIn 2s ease-in-out;
-            }
-
-            @keyframes logoFadeIn {
-                0% {
-                    opacity: 0;
-                    transform: scale(0.8);
-                }
-                100% {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-
             .project-hero {
                 position: relative;
                 height: 70vh;
@@ -617,13 +575,6 @@
 	</head>
 
     <body data-spy="scroll" data-target="#main-navbar">
-        <!-- Logo Animation Section -->
-        <section id="logo-animation-section" class="fullscreen-logo">
-            <div class="logo-container">
-                <img src="img/sanifu-architectural-firm-preload-logo.png" alt="Sanifu Limited" class="animated-logo">
-            </div>
-        </section>
-
     	<div class="body">
 
             <!--========== BEGIN HEADER ==========-->
@@ -878,16 +829,6 @@
         <script src="inc/bootstrap/js/bootstrap.min.js"></script>
 
         <script>
-            // Logo animation - fade out after 3 seconds (like the main page)
-            document.addEventListener('DOMContentLoaded', function() {
-                var logoSection = document.getElementById('logo-animation-section');
-                if (logoSection) {
-                    setTimeout(function() {
-                        logoSection.classList.add('fade-out');
-                    }, 3000);
-                }
-            });
-
             // Navbar shrink on scroll (matches main page behavior)
             window.addEventListener('scroll', function() {
                 var header = document.querySelector('.navbar-fixed-top');
