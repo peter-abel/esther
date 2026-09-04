@@ -1,6 +1,6 @@
 var pdProjects = {
   apo: {
-    title: "Apo Residential Layout",
+    title: "Kagugu Apartment",
     location: "Kigali, Rwanda",
     type: "Residential",
     date: "Design Phase",
@@ -10,16 +10,16 @@ var pdProjects = {
     heroImage: "img/portfolio/Apo Layout.png",
     sideImage: "img/portfolio/Apo Layout.png",
     outcome: "A bespoke residential layout crafted to maximize natural light, airflow, and outdoor living while prioritizing energy efficiency and sustainable materials.",
-    description: "The Apo Residential Layout is a bespoke residential design developed around family living. Building orientation, openings, and material choices were carefully composed to respond to the Kigali climate, creating a home that is comfortable, efficient, and connected to its landscape.",
+    description: "The Kagugu Apartment is a bespoke residential design developed around family living. Building orientation, openings, and material choices were carefully composed to respond to the Kigali climate, creating a home that is comfortable, efficient, and connected to its landscape.",
     highlights: [
       { icon: "fa-sun-o", title: "Passive Solar Design", text: "Orientation and openings optimized for natural light and cross-ventilation." },
       { icon: "fa-leaf", title: "Green Design", text: "Energy-efficient systems and sustainable, locally sourced materials." },
       { icon: "fa-tint", title: "Water Conservation", text: "Rainwater harvesting and low-flow fixtures reduce overall water use." }
     ],
     gallery: [
-      { src: "img/portfolio/Apo Layout.png", alt: "Apo Residential Layout" },
-      { src: "img/portfolio/apo gallery/2.png", alt: "Apo Residential Layout - Floor Plan" },
-      { src: "img/portfolio/apo gallery/3.png", alt: "Apo Residential Layout - Plan Detail" }
+      { src: "img/portfolio/Apo Layout.png", alt: "Kagugu Apartment" },
+      { src: "img/portfolio/apo gallery/2.png", alt: "Kagugu Apartment - Floor Plan" },
+      { src: "img/portfolio/apo gallery/3.png", alt: "Kagugu Apartment - Plan Detail" }
     ],
     plans: [
       { label: "2 Bed Floor Plan (PDF)", url: "img/portfolio/apo gallery/2 bed floor plan.pdf" },
@@ -27,7 +27,7 @@ var pdProjects = {
     ]
   },
   murenzi: {
-    title: "Murenzi Residence",
+    title: "Gaculiro Refurbishment",
     location: "Kigali, Rwanda",
     type: "Residential",
     date: "Design Phase",
@@ -37,16 +37,16 @@ var pdProjects = {
     heroImage: "img/portfolio/murenzi.jpg",
     sideImage: "img/portfolio/murenzi.jpg",
     outcome: "A refined private residence designed around family living, blending contemporary architecture with sustainable building practices and energy-efficient systems.",
-    description: "The Murenzi Residence is a contemporary private home conceived around family life. The design balances generous living spaces with sustainability, using energy-efficient systems and natural ventilation to keep running costs low while creating a calm, light-filled environment.",
+    description: "The Gaculiro Refurbishment transforms a contemporary private home around family life. The design balances generous living spaces with sustainability, using energy-efficient systems and natural ventilation to keep running costs low while creating a calm, light-filled environment.",
     highlights: [
       { icon: "fa-sun-o", title: "Passive Solar Design", text: "Orientation and openings optimized for natural light and cross-ventilation." },
       { icon: "fa-leaf", title: "Green Design", text: "Energy-efficient systems and sustainable, locally sourced materials." },
       { icon: "fa-tint", title: "Water Conservation", text: "Rainwater harvesting and low-flow fixtures reduce overall water use." }
     ],
     gallery: [
-      { src: "img/portfolio/murenzi.jpg", alt: "Murenzi Residence" },
-      { src: "img/portfolio/murenzi gallery/3D_Perspective_03.jpg", alt: "Murenzi Residence - 3D Perspective" },
-      { src: "img/portfolio/murenzi gallery/3D_Perspective_06.jpg", alt: "Murenzi Residence - 3D Perspective" }
+      { src: "img/portfolio/murenzi.jpg", alt: "Gaculiro Refurbishment" },
+      { src: "img/portfolio/murenzi gallery/3D_Perspective_03.jpg", alt: "Gaculiro Refurbishment - 3D Perspective" },
+      { src: "img/portfolio/murenzi gallery/3D_Perspective_06.jpg", alt: "Gaculiro Refurbishment - 3D Perspective" }
     ],
     plans: [],
     beforeAfter: {
@@ -55,8 +55,8 @@ var pdProjects = {
     }
   },
   ishami: {
-    title: "ISHAMI Residence",
-    location: "Ishami, Kigali",
+    title: "Kibagabaga Apartment",
+    location: "Kibagabaga, Kigali",
     type: "Residential",
     date: "Design Phase",
     size: "1,200 sqm",
@@ -64,22 +64,22 @@ var pdProjects = {
     scope: "Architectural Design",
     heroImage: "img/portfolio/2 ISHAMI.jpeg",
     sideImage: "img/portfolio/2 ISHAMI.jpeg",
-    outcome: "A contemporary residential project in Ishami, designed with a focus on indoor-outdoor flow, natural ventilation, and sustainable, locally sourced materials.",
-    description: "The ISHAMI Residence is a contemporary residential project in the Ishami neighborhood of Kigali. The design emphasizes indoor-outdoor flow and natural ventilation, creating a light and airy home built with locally sourced, sustainable materials.",
+    outcome: "A contemporary residential project in Kibagabaga, designed with a focus on indoor-outdoor flow, natural ventilation, and sustainable, locally sourced materials.",
+    description: "The Kibagabaga Apartment is a contemporary residential project in the Kibagabaga neighborhood of Kigali. The design emphasizes indoor-outdoor flow and natural ventilation, creating a light and airy home built with locally sourced, sustainable materials.",
     highlights: [
       { icon: "fa-sun-o", title: "Passive Solar Design", text: "Orientation and openings optimized for natural light and cross-ventilation." },
       { icon: "fa-leaf", title: "Green Design", text: "Energy-efficient systems and sustainable, locally sourced materials." },
       { icon: "fa-tint", title: "Water Conservation", text: "Rainwater harvesting and low-flow fixtures reduce overall water use." }
     ],
     gallery: [
-      { src: "img/portfolio/2 ISHAMI.jpeg", alt: "ISHAMI Residence" },
-      { src: "img/portfolio/ishami Gallery/1 ISHAMI.jpeg", alt: "ISHAMI Residence - View 1" },
-      { src: "img/portfolio/ishami Gallery/3 ISHAMI.jpeg", alt: "ISHAMI Residence - View 3" },
-      { src: "img/portfolio/ishami Gallery/4 ISHAMI.jpeg", alt: "ISHAMI Residence - View 4" },
-      { src: "img/portfolio/ishami Gallery/5 ISHAMI.png", alt: "ISHAMI Residence - View 5" }
+      { src: "img/portfolio/2 ISHAMI.jpeg", alt: "Kibagabaga Apartment" },
+      { src: "img/portfolio/ishami Gallery/1 ISHAMI.jpeg", alt: "Kibagabaga Apartment - View 1" },
+      { src: "img/portfolio/ishami Gallery/3 ISHAMI.jpeg", alt: "Kibagabaga Apartment - View 3" },
+      { src: "img/portfolio/ishami Gallery/4 ISHAMI.jpeg", alt: "Kibagabaga Apartment - View 4" },
+      { src: "img/portfolio/ishami Gallery/5 ISHAMI.png", alt: "Kibagabaga Apartment - View 5" }
     ],
     plans: [
-      { label: "Proposed ISHAMI Apartments (PDF)", url: "img/portfolio/ishami Gallery/THE PROPOSED ISHAMI APARTMENTS-REV-02-09-03-2026 (1).pdf" }
+      { label: "Proposed Kibagabaga Apartment (PDF)", url: "img/portfolio/ishami Gallery/THE PROPOSED ISHAMI APARTMENTS-REV-02-09-03-2026 (1).pdf" }
     ]
   }
 };
