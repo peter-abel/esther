@@ -90,66 +90,87 @@ $("#owl-intro-text").owlCarousel({
     pagination : true
 })
 
-// Portfolio filtering with pillars
-function applyFilter(filterClass) {
-    $('.portfolio_content .mix').each(function() {
-        if ($(this).hasClass(filterClass)) {
-            $(this).show();
-        } else {
-            $(this).hide();
-        }
-    });
-}
-
-function updatePillarIntro(filterClass) {
-    $('.pillar-intro').removeClass('active');
-    var isEdgeSub = filterClass.indexOf('edge-') === 0;
-    if (filterClass === 'edge-auditors' ||
-        filterClass === 'edge-commercial' ||
-        filterClass === 'edge-residential' ||
-        filterClass === 'edge-institutional') {
-        $('#edge-auditors-intro').addClass('active');
-    } else {
-        $('#architectural-designs-intro').addClass('active');
-    }
-}
-
+// Portfolio filtering: each side shows the first 2 cards by default and a
+// "More" / "Show Less" toggle reveals the rest. Filtering still applies first.
 $(document).ready(function() {
+    var PILLAR_LIMIT = 2;
 
-    // --- Global pillar filter buttons ---
-    $('.filters ul li').on('click', function() {
-        $('.filters ul li').removeClass('active');
-        $(this).addClass('active');
-        $('.subcategory-btn').removeClass('active');
+    // Which subcategory filter is active on this side (empty = show all)
+    function activeFilter($side) {
+        var $activeBtn = $side.find('.subcategory-btn.active');
+        return $activeBtn.length ? $activeBtn.attr('data-filter').replace(/^\./, '') : '';
+    }
 
-        var filterClass = $(this).attr('data-filter').replace(/^\./, '');
-        applyFilter(filterClass);
-        updatePillarIntro(filterClass);
-    });
+    // Show/hide a pillar's cards up to the limit (or all when expanded), then
+    // update the "More"/"Show Less" button. Respects the active filter.
+    function applyPillar($side) {
+        var filterClass = activeFilter($side);
+        var expanded = $side.hasClass('pillar-expanded');
+        var $btn = $side.find('.pillar-more-btn');
 
-    // --- Subcategory filter buttons ---
-    $('.subcategory-btn').on('click', function() {
-        $('.subcategory-btn').removeClass('active');
-        $(this).addClass('active');
+        // Eligible cards for this side (in document order) after filtering
+        var $cards = $side.find('.mix').filter(function() {
+            return !filterClass || $(this).hasClass(filterClass);
+        });
 
-        var filterClass = $(this).attr('data-filter').replace(/^\./, '');
-        applyFilter(filterClass);
-        updatePillarIntro(filterClass);
+        var total = $cards.length;
+        var showCount = expanded ? total : Math.min(total, PILLAR_LIMIT);
 
-        // Highlight the correct global pillar button
-        var parentPillarClass = filterClass.indexOf('edge-') === 0 ? 'edge-auditors' : 'architectural-design';
-        $('.filters ul li').removeClass('active');
-        $('.filters ul li').each(function() {
-            if ($(this).attr('data-filter').replace(/^\./, '') === parentPillarClass) {
-                $(this).addClass('active');
+        // Hide anything not in the eligible set, reveal up to showCount
+        $side.find('.mix').not($cards).hide();
+        $cards.each(function(i) {
+            if (i < showCount) {
+                $(this).show().find('.project-card').addClass('animated');
+            } else {
+                $(this).hide();
             }
         });
+
+        // Toggle button visibility / label
+        if ($btn.length) {
+            if (total <= PILLAR_LIMIT) {
+                $btn.hide();
+            } else {
+                $btn.text(expanded ? 'Show Less' : 'More').show();
+            }
+        }
+    }
+
+    // Make every card visible-capable (the .animate-on-scroll class starts
+    // hidden) and create a "More" button under each pillar grid if none exists.
+    $('.pillar-side').each(function() {
+        var $side = $(this);
+        if ($side.find('.pillar-more-btn').length === 0) {
+            $side.find('.row').first().after('<button type="button" class="pillar-more-btn">More</button>');
+        }
+        $side.find('.animate-on-scroll').addClass('animated');
     });
 
-    // --- Initialise: show EDGE Auditors cards first ---
-    applyFilter('edge-auditors');
-    updatePillarIntro('edge-auditors');
+    // Wire up filtering + the "More"/"Show Less" toggle per pillar side
+    $('.pillar-side').each(function() {
+        var $side = $(this);
+
+        $side.find('.subcategory-btn').on('click', function() {
+            var $btn = $(this);
+            if ($btn.hasClass('active')) {
+                $btn.removeClass('active'); // toggle off -> show all on this side
+            } else {
+                $side.find('.subcategory-btn').removeClass('active');
+                $btn.addClass('active');
+            }
+            $side.removeClass('pillar-expanded'); // re-collapse to the limit
+            applyPillar($side);
+        });
+
+        $side.find('.pillar-more-btn').on('click', function() {
+            $side.toggleClass('pillar-expanded');
+            applyPillar($side);
+        });
+
+        applyPillar($side); // set the initial collapsed state
+    });
 });
+
 
 // Partner carousel
 $("#owl-partners").owlCarousel({

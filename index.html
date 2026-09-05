@@ -327,7 +327,8 @@
             }
 
             .subcategory-btn {
-                padding: 8px 16px;
+                padding: 7px 12px;
+                white-space: nowrap;
                 background-color: #f8f9fa;
                 border: 1px solid #dee2e6;
                 border-radius: 4px;
@@ -614,9 +615,9 @@
                 margin-bottom: 30px;
             }
 
-            /* Portfolio grid items - hidden by JS filter on init */
+            /* Portfolio grid items - both pillars shown side by side */
             .portfolio_content .mix {
-                display: none;
+                display: block;
             }
 
             /* Fix Isotope container to prevent clipping and overlapping */
@@ -640,6 +641,105 @@
                 min-height: 600px; /* Ensure section has height */
                 display: block !important;
                 visibility: visible !important;
+            }
+
+            /* ===== Portfolio: two pillars side by side (midline divider) ===== */
+            .portfolio-split {
+                display: flex;
+                align-items: stretch;
+            }
+            .portfolio-split .edge-side {
+                order: 1;
+            }
+            .portfolio-split .pillar-divider {
+                order: 2;
+            }
+            .portfolio-split .arch-side {
+                order: 3;
+            }
+            .pillar-side {
+                flex: 1 1 0;
+                min-width: 0;
+            }
+            .pillar-divider {
+                flex: 0 0 2px;
+                margin: 0 30px;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 151, 178, 0),
+                    rgba(0, 151, 178, 0.35) 6%,
+                    rgba(0, 151, 178, 0.35) 94%,
+                    rgba(0, 151, 178, 0)
+                );
+            }
+            .pillar-side .pillar-intro {
+                margin-bottom: 25px;
+            }
+            .pillar-side .row {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0 25px;
+            }
+            .pillar-side .mix {
+                width: auto !important;
+                max-width: none !important;
+                float: none !important;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            /* Undo Bootstrap .row clearfix pseudo-elements so they don't become
+               phantom grid items (which left an empty cell at the top-left of
+               each pillar grid and a trailing empty cell). */
+            .pillar-side .row::before,
+            .pillar-side .row::after {
+                display: none;
+                content: none;
+            }
+            /* "Show more" toggle button under each pillar grid */
+            .pillar-more-btn {
+                display: block;
+                margin: 26px auto 0;
+                padding: 8px 18px;
+                background: transparent;
+                border: 1px solid #0097b2;
+                color: #0097b2;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: pointer;
+                transition: background-color 0.25s ease, color 0.25s ease;
+            }
+            .pillar-more-btn:hover {
+                background-color: #0097b2;
+                color: #fff;
+            }
+            @media (max-width: 991px) {
+                .portfolio-split {
+                    flex-direction: column;
+                }
+                .portfolio-split .edge-side {
+                    order: 0;
+                }
+                .portfolio-split .arch-side {
+                    order: 0;
+                }
+                .pillar-divider {
+                    flex: 0 0 auto;
+                    width: auto;
+                    height: 2px;
+                    margin: 15px 0 25px;
+                    background: linear-gradient(
+                        to right,
+                        rgba(0, 151, 178, 0),
+                        rgba(0, 151, 178, 0.35) 8%,
+                        rgba(0, 151, 178, 0.35) 92%,
+                        rgba(0, 151, 178, 0)
+                    );
+                }
+            }
+            @media (max-width: 600px) {
+                .pillar-side .row {
+                    grid-template-columns: 1fr;
+                }
             }
         </style>
 	</head>
@@ -759,43 +859,21 @@
             
                                 <!-- Portfolio Content -->
                                 <div class="portfoloi_content_area">
-                                    <!-- Global Filter Menu -->
-                                    <div class="portfolio_menu">
-                                        <div class="filters">
-                                            <ul>
-                                                <li class="active" data-filter=".edge-auditors">EDGE Experts & Auditors</li>
-                                                <li data-filter=".architectural-design">Architecture Designs</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Pillar Introduction Sections -->
-                                    <div class="pillar-intro-sections">
-                                        <div class="pillar-intro active" id="edge-auditors-intro">
-                                            <h3>EDGE Auditors</h3>
-                                            <p class="pillar-subtitle">Data-Driven Sustainability.</p>
-                                            <p>Beyond aesthetics, we provide the technical roadmap for resource-efficient buildings through comprehensive sustainability certification.</p>
-                                            <div class="subcategory-filters">
-                                                <button class="subcategory-btn" data-filter=".edge-commercial">Commercial Projects</button>
-                                                <button class="subcategory-btn" data-filter=".edge-residential">Residential Projects</button>
-                                                <button class="subcategory-btn" data-filter=".edge-institutional">Institutional Projects</button>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="pillar-intro" id="architectural-designs-intro">
-                                            <h3>Architectural Designs</h3>
-                                            <p class="pillar-subtitle">Conceptual Excellence, Built to Last.</p>
-                                            <p>From bespoke residential sanctuaries to high-impact commercial hubs, we create spaces that tell stories through design.</p>
-                                            <div class="subcategory-filters">
-                                                <button class="subcategory-btn" data-filter=".residential">Residential</button>
-                                                <button class="subcategory-btn" data-filter=".commercial">Commercial</button>
-                                                <button class="subcategory-btn" data-filter=".interiors">Interiors</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                
                                     <div class="portfolio_content">
-                                        <div class="row">
+                                        <div class="portfolio-split">
+
+                                            <div class="pillar-side arch-side">
+                                                <div class="pillar-intro active" id="architectural-designs-intro">
+                                                    <h3>Architectural Designs</h3>
+                                                    <p class="pillar-subtitle">Conceptual Excellence, Built to Last.</p>
+                                                    <p>From bespoke residential sanctuaries to high-impact commercial hubs, we create spaces that tell stories through design.</p>
+                                                    <div class="subcategory-filters">
+                                                        <button class="subcategory-btn" data-filter=".residential">Residential</button>
+                                                        <button class="subcategory-btn" data-filter=".commercial">Commercial</button>
+                                                        <button class="subcategory-btn" data-filter=".interiors">Interiors</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
                                             <!-- Project 1: Architectural Designs - Kagugu Apartment -->
                                             <div class="col-md-4 col-sm-6 mix architectural-design residential green-design">
                                                 <article class="project-card animate-on-scroll" data-category="residential">
@@ -873,6 +951,27 @@
                                                     </div>
                                                 </article>
                                             </div>
+
+                                        </div>
+
+                                        <button type="button" class="pillar-more-btn">More</button>
+
+                                    </div>
+
+                                    <div class="pillar-divider"></div>
+
+                                    <div class="pillar-side edge-side">
+                                        <div class="pillar-intro active" id="edge-auditors-intro">
+                                            <h3>EDGE Experts & Auditors</h3>
+                                            <p class="pillar-subtitle">Data-Driven Sustainability.</p>
+                                            <p>Beyond aesthetics, we provide the technical roadmap for resource-efficient buildings through comprehensive sustainability certification.</p>
+                                            <div class="subcategory-filters">
+                                                <button class="subcategory-btn" data-filter=".edge-commercial">Commercial</button>
+                                                <button class="subcategory-btn" data-filter=".edge-residential">Residential</button>
+                                                <button class="subcategory-btn" data-filter=".edge-institutional">Institutional</button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
 
                                             <!-- ========== EDGE AUDITORS PROJECTS ========== -->
                                             
@@ -1032,6 +1131,11 @@
                                                 </article>
                                             </div>
                                         </div>
+
+                                        <button type="button" class="pillar-more-btn">More</button>
+
+                                    </div>
+                                </div>
                                     </div>
                                 </div>
                             </div>  
