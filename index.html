@@ -46,7 +46,8 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <link rel="shortcut icon" type="x-icon"  href="icons8.png">
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <style>
@@ -701,7 +702,14 @@
             
             
         	<!-- Begin text carousel intro section -->
-			<section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/large-b.jpg);">
+			<section id="text-carousel-intro-section">
+
+                <div class="intro-slideshow" aria-hidden="true">
+                    <div class="slide active" style="background-image: url('img/hero-kagugu.jpg');"></div>
+                    <div class="slide" style="background-image: url('img/hero-gaculiro.jpg');"></div>
+                    <div class="slide" style="background-image: url('img/hero-kibagabaga.jpg');"></div>
+                </div>
+                <div class="intro-overlay" aria-hidden="true"></div>
 				
 				<div class="container">
 					<div class="caption text-center text-white" data-stellar-ratio="0.7">
@@ -1635,6 +1643,25 @@
         </script>
 
 		<!-- Theme JS -->
+
+        <script>
+            // Hero background crossfade slideshow
+            (function() {
+                var slides = document.querySelectorAll('.intro-slideshow .slide');
+                if (slides.length < 2) return;
+                var current = 0;
+                function heroNextSlide() {
+                    var prev = current;
+                    current = (current + 1) % slides.length;
+                    // New slide fades in; hide the previous one only after it is fully covered
+                    slides[current].classList.add('active');
+                    setTimeout(function() {
+                        slides[prev].classList.remove('active');
+                    }, 1300);
+                }
+                setInterval(heroNextSlide, 6000);
+            })();
+        </script>
 		<script src="js/theme.js"></script>
 
     </body> 
