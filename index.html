@@ -16,7 +16,6 @@
         
         <!-- Google Fonts  -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'> <!-- Body font -->
-		<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap' rel='stylesheet' type='text/css'> <!-- Navbar font -->
 
 		<!-- Libs and Plugins CSS -->
 		<link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
@@ -741,6 +740,49 @@
                     grid-template-columns: 1fr;
                 }
             }
+            /* Numbered services list inside the About "Services" card */
+            .rotate-box-1 ol.service-list {
+                margin: 10px 0 0;
+                padding: 0 10px;
+                text-align: left;
+                list-style: decimal inside;
+            }
+            .rotate-box-1 ol.service-list li {
+                margin-bottom: 6px;
+                color: #555;
+                line-height: 1.5;
+                list-style: decimal inside;
+            }
+            /* On small screens mobile.css centers the whole About section
+               (headings/text/icons), so center the numbered Services list too
+               instead of leaving it left-aligned. */
+            @media (max-width: 767px) {
+                #about-section .rotate-box-1 ol.service-list {
+                    text-align: center;
+                }
+            }
+            /* About section adopts the portfolio color scheme (teal / orange / navy) */
+            #about-section .rotate-box-1.square-icon .rotate-box-icon {
+                background-color: #0097b2; /* teal - EDGE accent */
+            }
+            #about-section .rotate-box-1:hover.square-icon .rotate-box-icon {
+                background-color: #ffbd59; /* orange - Architectural accent */
+            }
+            #about-section .rotate-box-1 h4 {
+                color: #2c3e50; /* navy - portfolio title color */
+            }
+            #about-section .rotate-box-1 p {
+                color: #555;
+            }
+            #about-section ol.service-list li::marker {
+                color: #0097b2; /* teal list numbers */
+            }
+            /* Make each About card fill its column evenly so the three cards
+               distribute across the full width (inline-block would otherwise
+               shrink-wrap to its content and leave ragged boxes). */
+            #about-section .rotate-box-1-wrapper .rotate-box-1 {
+                display: block;
+            }
         </style>
 	</head>
 
@@ -1163,7 +1205,7 @@
                 <div class="rotate-box-1-wrapper">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-md-4 col-sm-6">
                                 <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
                                     <span class="rotate-box-icon"><i class="fa fa-users"></i></span>
                                     <div class="rotate-box-info">
@@ -1173,32 +1215,27 @@
                                 </a>
                             </div>
 
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-md-4 col-sm-6">
                                 <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
                                     <span class="rotate-box-icon"><i class="fa fa-diamond"></i></span>
                                     <div class="rotate-box-info">
-                                        <h4>What We Do</h4>
-                                        <p>We pride ourselves in offering sustainable designs and buildings to our clients. We partner with allied consultants to offer complete design and supervision services for sustainable and green projects.</p>
+                                        <h4>Services</h4>
+                                        <ol class="service-list">
+                                            <li>Architectural Design</li>
+                                            <li>EDGE Auditors</li>
+                                            <li>EDGE Experts</li>
+                                            <li>Rwanda Green Building Minimum Compliance</li>
+                                        </ol>
                                     </div>
                                 </a>
                             </div>
 
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
-                                    <span class="rotate-box-icon"><i class="fa fa-heart"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>Why We Do It</h4>
-                                        <p>Sanifu Limited is committed to promoting sustainability in the field of architecture and construction. We believe in the importance of environmentally-friendly and energy-efficient designs, and our mission is to provide these services to our clients to create a more sustainable future.</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-md-4 col-sm-6">
                                 <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
                                     <span class="rotate-box-icon"><i class="fa fa-clock-o"></i></span>
                                     <div class="rotate-box-info">
                                         <h4>Since When</h4>
-                                        <p>Our firm has been operating in Rwanda for 10 years since 2010.</p>
+                                        <p>Our firm has been operating in Rwanda since 2012.</p>
                                     </div>
                                 </a>
                             </div>
@@ -1207,126 +1244,7 @@
                     </div> <!-- /.container -->
                 </div>
                 <!-- End rotate box-1 -->
-            
-            <!-- Begin Services -->
-            <section id="services-section" class="page text-center">
-                <!-- Begin page header-->
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Services</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle"></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header  -->
-            
-                <!-- Begin roatet box-2 -->
-                <div class="rotate-box-2-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0">
-                                    <span class="rotate-box-icon"><i class="fas fa-building"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h3>Whole Building Sustainable Design Consultancy</h3>
-                                        <p>We offer architectural design services and partner with allied consultants to provide comprehensive design and supervision services for complete sustainable projects.</p>
-                                        <br>
-                                        <br> <!---
-                                        <div style="padding-left: 20%;">
-                                        <ul class="table-list" style="text-align: left;">
-                                            <li> <i class="fa-solid fa-check"> </i>New build design and Supervision. </li>
-                                            <li> <i class="fa-solid fa-check"> </i>Refurbishment and Extension.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Greening Existing Buildings.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Project Management.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Audits/Target Setting/Design.</li>
-                                          </ul>
-                                        </div> -->
-
-                                    
-                                    </div>
-                                </a>
-                            </div>
-                        
-                            <div class="col-md-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.2s">
-                                    <span class="rotate-box-icon"><i class="fas fa-chart-pie"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h3>Green Building Consultancy</h3>
-                                        <p>We support professional teams in the delivery of sustainable projects by offering green building consultancy.</p>
-                                        <br>
-                                        <br>  <!---
-                                        <div style="padding-left: 20%;">
-                                        <ul class="table-list" style="text-align: left;">
-                                            <li> <i class="fa-solid fa-check"> </i>Sustainable Design Strategy Development.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Building Performance Simulation.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Testing and Commissioning.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Resource Recommendations.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Green Building Research.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Resource Recommendations.</li>
-                                          </ul>
-                                          </div> -->
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">    
-                            <div class="col-md-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.4s">
-                                    <span class="rotate-box-icon"><i class="fas fa-clipboard"></i></span>
-                                    <div class="rotate-box-info" >
-                                        <h3>Rwanda Green Building</h3>
-                                        <h3> Minimum Compliance Providers.</h3>
-                                        <p>We offer architectural design services and partner with allied </p>
-                                        <p> to provide comprehensive design and supervision services for complete sustainable projects.</p>
-                                        <br>
-                                        <br> <!---
-                                        <div style="padding-left: 20%;">
-                                        <ul class="table-list" style="text-align: left;">
-                                            <li> <i class="fa-solid fa-check"> </i>New Build Design from inception to implementation </li>
-                                            <li> <i class="fa-solid fa-check"> </i>Refurbishment and Extension.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Greening Existing Buildings.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Audits/Target Setting/Design.</li>
-                                          </ul>
-                                          </div> -->
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.6s">
-                                    <span class="rotate-box-icon"><i class="fas fa-address-card"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h3>EDGE Experts and Auditors</h3>
-                                        <p>Our team includes EDGE experts and auditors who collaborate closely with your design team to integrate green concepts, systems, and solutions into your projects.</p>
-                                        <br>
-                                        <br>  <!---
-                                        <div style="padding-left: 20%;">
-                                        <ul class="table-list"style="text-align: left;">
-                                            <li> <i class="fa-solid fa-check"> </i>Retrofitting existing portfolios.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Assessment of new green building investment facilities.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Decision making on the best green options.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Aligning green design with efficient resource use.</li>
-                                            <li> <i class="fa-solid fa-check"> </i>Meet the standard of at least 20% savings in energy</li>
-                                            
-                                          </ul>
-                                          </div>  -->
-                                    </div>
-                                </a>
-                            </div>
-            
-                        
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-                                           
-                </div>
-            <!-- End rotate-box-2 -->
-            </section>
-            <!-- End Services -->
-            
-                
-                
-                
+  
             <!-- Begin counter up -->
             <section id="counter-section">                					
 				<div id="counter-up-trigger" class="counter-up text-white parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/counter-bg.jpg);">

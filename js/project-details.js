@@ -23,7 +23,8 @@ var pdProjects = {
     ],
     plans: [
       { label: "2 Bed Floor Plan (PDF)", url: "img/portfolio/apo gallery/2 bed floor plan.pdf" },
-      { label: "Site Plan (PDF)", url: "img/portfolio/apo gallery/site plan.pdf" }
+      { label: "Site Plan (PDF)", url: "img/portfolio/apo gallery/site plan.pdf" },
+      { label: "Interior Design", url: "https://www.kujiale.cn/design/3FO3CV7LBDSM/show?fromqrcode=true", icon: "fa-cube" }
     ]
   },
   murenzi: {
@@ -162,7 +163,7 @@ function initializeProjectDetails() {
       plansSection.style.display = "";
       plans.innerHTML = project.plans.map(function (p) {
         return '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-primary">' +
-          '<i class="fa fa-file-pdf-o"></i> ' + p.label + '</a>';
+          '<i class="fa ' + (p.icon || "fa-file-pdf-o") + '"></i> ' + p.label + '</a>';
       }).join("");
     } else {
       plansSection.style.display = "none";

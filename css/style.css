@@ -64,7 +64,7 @@ p {
 	font: 14px/1.5em "Roboto";
 }
 .navbar-nav > li > a {
-	font-family: "Poppins", Helvetica, Arial, sans-serif;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 /* End Fonts */
 
@@ -339,12 +339,12 @@ section {
 	font-size: 50px;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-	font-family: sans-serif;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 #text-carousel-intro-section .caption p {
 	letter-spacing: 2px;
 	font-size: 16px;
-	font-family: sans-serif;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 /* End text carousel intro */
 
@@ -745,7 +745,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 }
 #social-section .page-header-wrapper .page-header .subtitle {
 	color: rgba(255,255,255,0.85);
-	font-family: 'Poppins', Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-weight: 400;
 }
 #social-section .devider {
@@ -814,7 +814,7 @@ ul.social-list li a .fa-brands {
 }
 #contact-section .page-header-wrapper .page-header h2 {
 	color: #ffffff;
-	font-family: 'Poppins', Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: 0.06em;
