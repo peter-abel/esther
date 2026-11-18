@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+  <title>Onboard — Expert Eval</title>
+  <meta name="description" content="Expert Eval research survey — onboard">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/expert-eval.css">
+</head>
+<body class="ee-body" data-page="onboard">
+  <a class="ee-skip" id="ee-skip" href="#ee-main"></a>
+
+  <div class="ee-mobilebar" id="ee-mobilebar"></div>
+
+  <aside class="ee-sidebar" id="ee-sidebar"></aside>
+  <div class="ee-nav-backdrop" id="ee-nav-backdrop" aria-hidden="true"></div>
+
+  <main class="ee-main" id="ee-main" tabindex="-1">
+    <div class="ee-main__inner">
+      <div id="ee-topbar"></div>
+      <div id="ee-page"></div>
+    </div>
+  </main>
+
+  <div class="ee-popover-backdrop" id="ee-popover-backdrop" aria-hidden="true"></div>
+  <div class="ee-popover" id="ee-popover" role="dialog" aria-labelledby="ee-popover-title" aria-hidden="true" hidden>
+    <div class="ee-popover__handle" aria-hidden="true"></div>
+    <button class="ee-popover__close" id="ee-popover-close" type="button"></button>
+    <h2 class="ee-popover__title" id="ee-popover-title"></h2>
+    <div class="ee-popover__content" id="ee-popover-content"></div>
+  </div>
+
+  <div class="ee-visually-hidden" id="ee-live" role="status" aria-live="polite"></div>
+
+  <svg class="ee-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <symbol id="ee-icon-info" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+      <circle cx="12" cy="7.9" r="1.15" fill="currentColor" stroke="none"></circle>
+      <path d="M12 11v5.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="ee-icon-home" viewBox="0 0 24 24">
+      <path d="M3.8 10.7 12 3.6l8.2 7.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M5.8 9.6V20h12.4V9.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M9.6 20v-5.4h4.8V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+    </symbol>
+    <symbol id="ee-icon-chevron" viewBox="0 0 24 24">
+      <path d="m9.5 5.5 6.5 6.5-6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+    <symbol id="ee-icon-menu" viewBox="0 0 24 24">
+      <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="ee-icon-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="ee-icon-download" viewBox="0 0 24 24">
+      <path d="M12 3.8v10.4m0 0 4-4m-4 4-4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M4.8 19.2h14.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </symbol>
+    <symbol id="ee-icon-compass" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+      <path d="m15.6 8.4-2.1 5.1-5.1 2.1 2.1-5.1z" fill="currentColor" stroke="none"></path>
+    </symbol>
+    <symbol id="ee-icon-book" viewBox="0 0 24 24">
+      <path d="M4 4.8h6.2c1 0 1.8.8 1.8 1.8V20c0-.9-.8-1.7-1.8-1.7H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+      <path d="M20 4.8h-6.2c-1 0-1.8.8-1.8 1.8V20c0-.9.8-1.7 1.8-1.7H20z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+    </symbol>
+  </svg>
+
+  <script src="js/expert-eval-content.js" defer></script>
+  <script src="js/expert-eval-app.js" defer></script>
+</body>
+</html>
